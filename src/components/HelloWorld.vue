@@ -8,11 +8,51 @@
       />
 
       <div class="mb-8 text-center">
-        <div class="text-body-2 font-weight-light mb-n1">Welcome to</div>
-        <h1 class="text-h2 font-weight-bold">Vuetify</h1>
+        <div class="text-body-2 font-weight-light mb-n1">Projects worked on by</div>
+        <h1 class="text-h2 font-weight-bold">Dennis Geldhof</h1>
       </div>
 
       <v-row>
+        <v-col cols="12">
+          <MapChart :data="data">
+            <WorldMap />
+        </MapChart>
+        </v-col>
+
+        <v-row>
+          <template v-for="(project,imgIdx) in projects" :key="imgIdx">
+            <v-col v-if="!project.children" :cols="project.cols">
+              <v-card density="compact" height="100%" :max-height="project.max === true ? '42vh' : '20vh'">
+                <v-card-title>{{ project.title }}</v-card-title>
+                <v-card-subtitle>{{ project.subtitle }}</v-card-subtitle>
+                <v-img
+                  class="mt-2"
+                  cover
+                  height="100%"
+                  :src="project.image ? project.image : `https://picsum.photos/500/300?image=${project.cols * 20}`"
+                />
+              </v-card>
+            </v-col>
+
+            <v-col v-if="project.children" class="d-flex flex-column" :cols="project?.cols ?? 6">
+              <v-row>
+                <v-col v-for="(child,childIdx) in project.children" :key="childIdx" cols="12">
+                  <v-card density="compact" height="100%" max-height="20vh">
+                    <v-card-title> {{ child.title }} </v-card-title>
+                    <v-card-subtitle> {{ child.subtitle }} </v-card-subtitle>
+                    <v-img
+                      class="mt-2"
+                      cover
+                      height="100%"
+                      :src="child.image ? child.image : `https://picsum.photos/500/300?image=${child.cols + childIdx}`"
+                    />
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-col>
+          </template>
+        </v-row>
+
         <v-col cols="12">
           <v-card
             class="py-4"
@@ -61,6 +101,75 @@
 </template>
 
 <script setup lang="ts">
+  import { MapChart, WorldMap } from 'vue3-map-chart'
+  import 'vue3-map-chart/dist/style.css'
+
+ 
+  const data = {
+      US: 14,
+      GB: 40,
+      IE: 60,
+      SE: 40,
+      PL: 90,
+      NL: 22,
+      IT: 15,
+  }
+
+  const projects = [
+    {
+      cols: 6,
+      children: [
+        { title: 'ICC', cols: 6, image: new URL('@/assets/projects/icc.avif', import.meta.url).href, subtitle: 'TKH Security Flexposure - FlinQ' },
+        { title: 'QPark', cols: 6, image: new URL('@/assets/projects/qpark.jpg', import.meta.url).href, subtitle: 'TKH Security Flexposure - FlinQ' },
+      ],
+    },
+    { title: 'Intergrow Greenhouses', cols: 6, max: true, image: new URL('@/assets/projects/intergrow.jpg', import.meta.url).href, subtitle: 'Priva - FS Performance' },
+    { title: 'BESI', cols: 4, image: new URL('@/assets/projects/besi.jpg', import.meta.url).href, max: true, subtitle: 'Sioux' },
+    { title: 'Green Empire Farms', cols: 4, image: new URL('@/assets/projects/greenempire.jpg', import.meta.url).href, subtitle: 'Priva - FS Performance' },
+    { title: 'Eurojust', cols: 4, image: new URL('@/assets/projects/eurojust2.jpg', import.meta.url).href, max: true, subtitle: 'TKH Security - Flexposure FlinQ' },
+    { title: 'Mucci Farms', cols: 12, image: new URL('@/assets/projects/mucci.webp', import.meta.url).href, subtitle: 'Priva - FS Performance' },
+    { title: 'VIONIC powered by INTELLO', cols: 4, max: true, image: new URL('@/assets/projects/metrohm.jpg', import.meta.url).href, subtitle: 'Metrohm Autolab' },
+    { title: 'Nature Fresh Farms', cols: 4, max: true, image: new URL('@/assets/projects/naturefresh.jpg', import.meta.url).href, subtitle: 'Priva - FS Performance' },
+    { title: 'Zuidkoop - NextDelft', cols: 4, max: true, image: new URL('@/assets/projects/zuidkoop.jpg', import.meta.url).href, subtitle: 'Nurtio - Protect' },
+    {
+      cols: 6,
+      children: [
+        { title: 'Asfinag', cols: 6, image: new URL('@/assets/projects/asfinag.jpg', import.meta.url).href, subtitle: 'TKH Security - Siqura Network Recorder' },
+        { title: 'Plant Solutions', cols: 6, image: new URL('@/assets/projects/plantsolutions.jpg', import.meta.url).href, subtitle: 'Nurtio - Protect' },
+      ],
+    },
+    { title: 'Avantium', cols: 6, max: true, image: new URL('@/assets/projects/avantium.webp', import.meta.url).href },
+    { title: 'SK Roses', cols: 4, image: new URL('@/assets/projects/skroses.jpg', import.meta.url).href, subtitle: 'Priva - FS Performance' },
+    { title: 'Hexo', cols: 4, image: new URL('@/assets/projects/hexo.jpg', import.meta.url).href, subtitle: 'Priva - FS Performance' },
+    { title: 'SEIN', cols: 4, image: new URL('@/assets/projects/sein.webp', import.meta.url).href, subtitle: 'TKH Security - Flexposure FlinQ' },
+    { title: 'Arrestantencomplex Borne', cols: 4, image: new URL('@/assets/projects/borne.avif', import.meta.url).href, subtitle: 'TKH Security - Flexposure FlinQ' },
+    { title: 'RATP', cols: 4, image: new URL('@/assets/projects/ratp.jpeg', import.meta.url).href, subtitle: 'TKH Security - Siqura Network Recorder' },
+    { title: 'Rabobank', cols: 4, image: new URL('@/assets/projects/rabobank.png', import.meta.url).href, subtitle: 'TKH Security - Flexposure FlinQ' },
+    { title: 'Interparking', cols: 6, image: new URL('@/assets/projects/interparking.webp', import.meta.url).href, subtitle: 'TKH Security - Flexposure FlinQ' },
+    { title: 'Highway Taiwan', cols: 6, image: new URL('@/assets/projects/taiwan.jpg', import.meta.url).href, subtitle: 'TKH Security - Siqura Network Recorder' },
+    { title: 'Nurtio', cols: 6 },
+    { title: 'Supershift', cols: 6 },
+    { title: 'Ambius', cols: 6 }, // https://www.ambius.nl/
+    { title: 'leaflike', cols: 6 }, // https://www.leaflike.co.uk/
+    { title: 'donkergroep', cols: 6 }, // https://donkergroep.com/nl/donker-interieur/  https://www.firstfloral.com.ua/
+    { title: 'firstfloral', cols: 6 }, // https://www.firstfloral.com.ua/  https://greenoakms.com/garden-center/
+    { title: 'greenoak', cols: 6 }, //  https://greenoakms.com/garden-center/
+    
+    { title: 'greenoak', cols: 6 }, //  https://greenoakms.com/garden-center/
+  ]
+
+// https://bloomandflourishco.com/
+// https://www.naturesgreen.nl/nl/
+// https://www.leaffactory.nl/
+// https://vaxtvard.se/
+// https://green-roofs.co.uk/
+// https://foliagedesign.com/
+// https://growinggreenllc.com/
+// https://www.urbanplanters.co.uk/
+// https://universalfloral.com/
+// https://zuidkoop.nl/zuidkoop
+// https://plantsolutions.com/
+
   const links = [
     {
       href: 'https://vuetifyjs.com/',
