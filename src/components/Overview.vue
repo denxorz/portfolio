@@ -1,7 +1,9 @@
 <template>
   <v-container class="fill-height" max-width="1440px">
     <div class="mb-2">
-      <!-- <v-img class="mb-4" height="150" src="@/assets/logo.png" /> -->
+      <v-avatar class="mb-4" size="150px">
+        <v-img height="150" src="@/assets/fotovierkant.png" />
+      </v-avatar>
 
       <div class="mb-8 text-center">
         <div class="text-body-2 font-weight-light mb-n1">
@@ -167,9 +169,9 @@ const projects = [
         subtitle: "One Big Green",
       }, // https://www.firstfloral.com.ua/
       {
-        employer: "priva",
-        title: "SK Roses",
-        image: "skroses.jpg",
+        employer: "hobby",
+        title: "Satisfactory AWS Server",
+        image: "satisfactory.jpg",
       },
     ],
   },
@@ -276,9 +278,9 @@ const projects = [
     cols: 6,
     children: [
       {
-        employer: "hobby",
-        title: "Satisfactory AWS Server",
-        image: "satisfactory.jpg",
+        employer: "priva",
+        title: "SK Roses",
+        image: "skroses.jpg",
       },
       {
         employer: "nurtio",
