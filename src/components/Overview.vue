@@ -73,13 +73,17 @@ import { MapChart, WorldMap } from "vue3-map-chart";
 import "vue3-map-chart/dist/style.css";
 
 const data = {
-  US: 14,
-  GB: 40,
-  IE: 60,
-  SE: 40,
-  PL: 90,
-  NL: 22,
-  IT: 15,
+  US: 70,
+  GB: 70,
+  IE: 70,
+  SE: 70,
+  PL: 70,
+  NL: 70,
+  IT: 70,
+  FR: 70,
+  BE: 70,
+  UA: 70,
+  CA: 70,
 };
 
 const projects = [
