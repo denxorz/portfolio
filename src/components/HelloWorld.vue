@@ -20,26 +20,12 @@
         <v-row>
           <template v-for="(project, imgIdx) in projects" :key="imgIdx">
             <v-col v-if="!project.children" :cols="project.cols ?? 3">
-              <v-card
-                density="compact"
-                height="100%"
-                :max-height="project.spanRows === true ? '52vh' : '25vh'"
-              >
-                <v-card-title>{{ project.title }}</v-card-title>
-                <v-card-subtitle>{{ project.subtitle }}</v-card-subtitle>
-                <v-img
-                  class="mt-2"
-                  cover
-                  height="90%"
-                  :src="
-                    project.image
-                      ? project.image
-                      : `https://picsum.photos/500/300?image=${
-                          project.cols * 20
-                        }`
-                  "
-                />
-              </v-card>
+              <Project
+                :title="project.title"
+                :subtitle="project.subtitle"
+                :image="project.image"
+                :big="project.spanRows === true"
+              />
             </v-col>
 
             <v-col
@@ -53,22 +39,12 @@
                   :key="childIdx"
                   :cols="child.cols ?? 6"
                 >
-                  <v-card density="compact" height="100%" max-height="25vh">
-                    <v-card-title> {{ child.title }} </v-card-title>
-                    <v-card-subtitle> {{ child.subtitle }} </v-card-subtitle>
-                    <v-img
-                      class="mt-2"
-                      cover
-                      height="78%"
-                      :src="
-                        child.image
-                          ? child.image
-                          : `https://picsum.photos/500/300?image=${
-                              child.cols + childIdx
-                            }`
-                      "
-                    />
-                  </v-card>
+                  <Project
+                    :title="child.title"
+                    :subtitle="child.subtitle ?? ''"
+                    :image="child.image"
+                    child
+                  />
                 </v-col>
               </v-row>
             </v-col>
@@ -141,7 +117,7 @@ const projects = [
     title: "ICC",
     cols: 6,
     spanRows: true,
-    image: new URL("@/assets/projects/icc.webp", import.meta.url).href,
+    image: "icc.webp",
     subtitle: "TKH Security Flexposure - FlinQ",
   },
   {
@@ -149,23 +125,22 @@ const projects = [
     children: [
       {
         title: "QPark",
-        image: new URL("@/assets/projects/qpark.jpg", import.meta.url).href,
+        image: "qpark.jpg",
         subtitle: "TKH Security Flexposure - FlinQ",
       },
       {
         title: "Zuidkoop - NextDelft",
-        image: new URL("@/assets/projects/zuidkoop.jpg", import.meta.url).href,
+        image: "zuidkoop.jpg",
         subtitle: "Nurtio Protect",
       },
-
       {
         title: "Mucci Farms",
-        image: new URL("@/assets/projects/mucci.webp", import.meta.url).href,
+        image: "mucci.webp",
         subtitle: "Priva - FS Performance",
       },
       {
         title: "Eurojust",
-        image: new URL("@/assets/projects/eurojust2.jpg", import.meta.url).href,
+        image: "eurojust2.jpg",
         subtitle: "TKH Security - Flexposure FlinQ",
       },
     ],
@@ -173,23 +148,22 @@ const projects = [
 
   {
     title: "Plant Solutions",
-    image: new URL("@/assets/projects/plantsolutions.jpg", import.meta.url)
-      .href,
+    image: "plantsolutions.jpg",
     subtitle: "Nurtio - Protect",
   },
   {
     title: "Landal",
-    image: new URL("@/assets/projects/landal.webp", import.meta.url).href,
+    image: "landal.webp",
     subtitle: "Supershift - Landal",
   },
   {
     title: "BESI",
-    image: new URL("@/assets/projects/besi.jpg", import.meta.url).href,
+    image: "besi.jpg",
     subtitle: "Sioux",
   },
   {
     title: "Universal Floral",
-    image: new URL("@/assets/projects/uf.jpeg", import.meta.url).href,
+    image: "uf.jpeg",
     subtitle: "Nurtio Protect",
   },
 
@@ -198,23 +172,22 @@ const projects = [
     children: [
       {
         title: "VIONIC powered by INTELLO",
-        image: new URL("@/assets/projects/metrohm.jpg", import.meta.url).href,
+        image: "metrohm.jpg",
         subtitle: "Metrohm Autolab",
       },
       {
         title: "Asfinag",
-        image: new URL("@/assets/projects/asfinag.jpg", import.meta.url).href,
+        image: "asfinag.jpg",
         subtitle: "TKH Security - Siqura Network Recorder",
       },
       {
         title: "First Floral Company",
-        image: new URL("@/assets/projects/firstfloral.avif", import.meta.url)
-          .href,
+        image: "firstfloral.avif",
         subtitle: "One Big Green",
       }, // https://www.firstfloral.com.ua/
       {
         title: "SK Roses",
-        image: new URL("@/assets/projects/skroses.jpg", import.meta.url).href,
+        image: "skroses.jpg",
         subtitle: "Priva - FS Performance",
       },
     ],
@@ -223,28 +196,28 @@ const projects = [
     title: "Intergrow Greenhouses",
     cols: 6,
     spanRows: true,
-    image: new URL("@/assets/projects/intergrow.jpg", import.meta.url).href,
+    image: "intergrow.jpg",
     subtitle: "Priva - FS Performance",
   },
 
   {
     title: "Arrestantencomplex Borne",
-    image: new URL("@/assets/projects/borne.avif", import.meta.url).href,
+    image: "borne.avif",
     subtitle: "TKH Security - Flexposure FlinQ",
   },
   {
     title: "RATP",
-    image: new URL("@/assets/projects/ratp.jpeg", import.meta.url).href,
+    image: "ratp.jpeg",
     subtitle: "TKH Security - Siqura Network Recorder",
   },
   {
     title: "Rabobank",
-    image: new URL("@/assets/projects/rabobank.png", import.meta.url).href,
+    image: "rabobank.png",
     subtitle: "TKH Security - Flexposure FlinQ",
   },
   {
     title: "Leaflike",
-    image: new URL("@/assets/projects/leaflike.jpg", import.meta.url).href,
+    image: "leaflike.jpg",
     subtitle: "One Big Green",
   }, // https://www.leaflike.co.uk/
 
@@ -253,22 +226,21 @@ const projects = [
     children: [
       {
         title: "Avantium",
-        image: new URL("@/assets/projects/avantium.webp", import.meta.url).href,
+        image: "avantium.webp",
       },
       {
         title: "Hexo",
-        image: new URL("@/assets/projects/hexo.jpg", import.meta.url).href,
+        image: "hexo.jpg",
         subtitle: "Priva - FS Performance",
       },
       {
         title: "Växtvård",
-        image: new URL("@/assets/projects/vaxtvard.jpg", import.meta.url).href,
+        image: "vaxtvard.jpg",
         subtitle: "Nurtio Protect",
       }, // https://vaxtvard.se/
       {
         title: "Micromedia",
-        image: new URL("@/assets/projects/micromedia.webp", import.meta.url)
-          .href,
+        image: "micromedia.webp",
         subtitle: "Supershift - Micromedia",
       },
     ],
@@ -277,29 +249,29 @@ const projects = [
     title: "Mission:Control",
     cols: 6,
     spanRows: true,
-    image: new URL("@/assets/projects/mc.svg", import.meta.url).href,
+    image: "mc.svg",
     subtitle: "Supershift - Mission:Control",
   }, // https://www.missioncontrol.io/
 
   {
     title: "Leaf Factory",
-    image: new URL("@/assets/projects/leaf.jpg", import.meta.url).href,
+    image: "leaf.jpg",
     subtitle: "Nurtio Protect",
   }, // https://www.leaffactory.nl/
 
   {
     title: "Ambius UK",
-    image: new URL("@/assets/projects/ambius.jpg", import.meta.url).href,
+    image: "ambius.jpg",
     subtitle: "Nurtio Protect",
   }, // https://www.ambius.co.uk/
   {
     title: "Nature Fresh Farms",
-    image: new URL("@/assets/projects/naturefresh.jpg", import.meta.url).href,
+    image: "naturefresh.jpg",
     subtitle: "Priva - FS Performance",
   },
   {
     title: "SEIN",
-    image: new URL("@/assets/projects/sein.webp", import.meta.url).href,
+    image: "sein.webp",
     subtitle: "TKH Security - Flexposure FlinQ",
   },
 
@@ -308,7 +280,7 @@ const projects = [
 
     cols: 6,
     spanRows: true,
-    image: new URL("@/assets/projects/greenempire.jpg", import.meta.url).href,
+    image: "greenempire.jpg",
     subtitle: "Priva - FS Performance",
   },
 
@@ -317,24 +289,23 @@ const projects = [
     children: [
       {
         title: "Interparking",
-        image: new URL("@/assets/projects/interparking.webp", import.meta.url)
-          .href,
+        image: "interparking.webp",
         subtitle: "TKH Security - Flexposure FlinQ",
       },
       {
         title: "Highway Taiwan",
-        image: new URL("@/assets/projects/taiwan.jpg", import.meta.url).href,
+        image: "taiwan.jpg",
         subtitle: "TKH Security - Siqura Network Recorder",
       },
 
       {
         title: "SK Roses",
-        image: new URL("@/assets/projects/skroses.jpg", import.meta.url).href,
+        image: "skroses.jpg",
         subtitle: "Priva - FS Performance",
       },
       {
         title: "Donker Groep",
-        image: new URL("@/assets/projects/donker.webp", import.meta.url).href,
+        image: "donker.webp",
         subtitle: "Nurtio Protect",
       },
     ],
