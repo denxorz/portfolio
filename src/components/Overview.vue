@@ -1,7 +1,7 @@
 <template>
   <v-container class="fill-height" max-width="1440px">
     <div>
-      <v-img class="mb-4" height="150" src="@/assets/logo.png" />
+      <!-- <v-img class="mb-4" height="150" src="@/assets/logo.png" /> -->
 
       <div class="mb-8 text-center">
         <div class="text-body-2 font-weight-light mb-n1">
@@ -21,7 +21,7 @@
           <ProjectsGrid :projects="projects" />
         </v-row>
 
-        <v-col cols="12">
+        <!-- <v-col cols="12">
           <v-card
             class="py-4"
             color="surface-variant"
@@ -62,7 +62,7 @@
             :title="link.title"
             variant="tonal"
           />
-        </v-col>
+        </v-col> -->
       </v-row>
     </div>
   </v-container>
