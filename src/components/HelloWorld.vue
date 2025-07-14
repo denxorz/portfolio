@@ -20,11 +20,11 @@
         <v-row>
           <template v-for="(project, imgIdx) in projects" :key="imgIdx">
             <v-col v-if="!project.children" :cols="project.cols ?? 3">
-              <Project
+              <ProjectCell
+                :employer="project.employer"
                 :title="project.title"
-                :subtitle="project.subtitle"
+                :big="project.big"
                 :image="project.image"
-                :big="project.spanRows === true"
               />
             </v-col>
 
@@ -39,9 +39,9 @@
                   :key="childIdx"
                   :cols="child.cols ?? 6"
                 >
-                  <Project
+                  <ProjectCell
+                    :employer="child.employer ?? ''"
                     :title="child.title"
-                    :subtitle="child.subtitle ?? ''"
                     :image="child.image"
                     child
                   />
@@ -114,199 +114,202 @@ const data = {
 
 const projects = [
   {
+    employer: "flexposure",
     title: "ICC",
     cols: 6,
-    spanRows: true,
+    big: true,
     image: "icc.webp",
-    subtitle: "TKH Security Flexposure - FlinQ",
   },
   {
     cols: 6,
     children: [
       {
+        employer: "flexposure",
         title: "QPark",
         image: "qpark.jpg",
-        subtitle: "TKH Security Flexposure - FlinQ",
       },
       {
+        employer: "nurtio",
         title: "Zuidkoop - NextDelft",
         image: "zuidkoop.jpg",
-        subtitle: "Nurtio Protect",
       },
       {
+        employer: "priva",
         title: "Mucci Farms",
         image: "mucci.webp",
-        subtitle: "Priva - FS Performance",
       },
       {
+        employer: "flexposure",
         title: "Eurojust",
         image: "eurojust2.jpg",
-        subtitle: "TKH Security - Flexposure FlinQ",
       },
     ],
   },
 
   {
+    employer: "nurtio",
     title: "Plant Solutions",
     image: "plantsolutions.jpg",
-    subtitle: "Nurtio - Protect",
   },
   {
+    employer: "supershift",
     title: "Landal",
     image: "landal.webp",
-    subtitle: "Supershift - Landal",
   },
   {
+    employer: "sioux",
     title: "BESI",
     image: "besi.jpg",
-    subtitle: "Sioux",
   },
   {
+    employer: "nurtio",
     title: "Universal Floral",
     image: "uf.jpeg",
-    subtitle: "Nurtio Protect",
   },
 
   {
     cols: 6,
     children: [
       {
-        title: "VIONIC powered by INTELLO",
+        employer: "sioux",
+        title: "Metrohm Autolab - VIONIC powered by INTELLO",
         image: "metrohm.jpg",
-        subtitle: "Metrohm Autolab",
       },
       {
+        employer: "siqura",
         title: "Asfinag",
         image: "asfinag.jpg",
-        subtitle: "TKH Security - Siqura Network Recorder",
       },
       {
+        employer: "obg",
         title: "First Floral Company",
         image: "firstfloral.avif",
         subtitle: "One Big Green",
       }, // https://www.firstfloral.com.ua/
       {
+        employer: "priva",
         title: "SK Roses",
         image: "skroses.jpg",
-        subtitle: "Priva - FS Performance",
       },
     ],
   },
   {
+    employer: "priva",
     title: "Intergrow Greenhouses",
     cols: 6,
-    spanRows: true,
+    big: true,
     image: "intergrow.jpg",
-    subtitle: "Priva - FS Performance",
   },
 
   {
+    employer: "flexposure",
     title: "Arrestantencomplex Borne",
     image: "borne.avif",
-    subtitle: "TKH Security - Flexposure FlinQ",
   },
   {
+    employer: "siqura",
     title: "RATP",
     image: "ratp.jpeg",
-    subtitle: "TKH Security - Siqura Network Recorder",
   },
   {
+    employer: "flexposure",
     title: "Rabobank",
     image: "rabobank.png",
-    subtitle: "TKH Security - Flexposure FlinQ",
   },
   {
+    employer: "obg",
     title: "Leaflike",
     image: "leaflike.jpg",
-    subtitle: "One Big Green",
   }, // https://www.leaflike.co.uk/
 
   {
     cols: 6,
     children: [
       {
+        employer: "sioux",
         title: "Avantium",
         image: "avantium.webp",
       },
       {
+        employer: "priva",
         title: "Hexo",
         image: "hexo.jpg",
         subtitle: "Priva - FS Performance",
       },
       {
+        employer: "nurtio",
         title: "Växtvård",
         image: "vaxtvard.jpg",
-        subtitle: "Nurtio Protect",
       }, // https://vaxtvard.se/
       {
+        employer: "supershift",
         title: "Micromedia",
         image: "micromedia.webp",
-        subtitle: "Supershift - Micromedia",
       },
     ],
   },
   {
+    employer: "supershift",
     title: "Mission:Control",
     cols: 6,
-    spanRows: true,
+    big: true,
     image: "mc.svg",
-    subtitle: "Supershift - Mission:Control",
   }, // https://www.missioncontrol.io/
 
   {
+    employer: "nurtio",
     title: "Leaf Factory",
     image: "leaf.jpg",
-    subtitle: "Nurtio Protect",
   }, // https://www.leaffactory.nl/
 
   {
+    employer: "nurtio",
     title: "Ambius UK",
     image: "ambius.jpg",
-    subtitle: "Nurtio Protect",
   }, // https://www.ambius.co.uk/
   {
+    employer: "priva",
     title: "Nature Fresh Farms",
     image: "naturefresh.jpg",
-    subtitle: "Priva - FS Performance",
   },
   {
+    employer: "flexposure",
     title: "SEIN",
     image: "sein.webp",
-    subtitle: "TKH Security - Flexposure FlinQ",
   },
 
   {
+    employer: "priva",
     title: "Green Empire Farms",
-
     cols: 6,
-    spanRows: true,
+    big: true,
     image: "greenempire.jpg",
-    subtitle: "Priva - FS Performance",
   },
 
   {
     cols: 6,
     children: [
       {
+        employer: "flexposure",
         title: "Interparking",
         image: "interparking.webp",
-        subtitle: "TKH Security - Flexposure FlinQ",
       },
       {
+        employer: "siqura",
         title: "Highway Taiwan",
         image: "taiwan.jpg",
         subtitle: "TKH Security - Siqura Network Recorder",
       },
 
       {
+        employer: "priva",
         title: "SK Roses",
         image: "skroses.jpg",
-        subtitle: "Priva - FS Performance",
       },
       {
+        employer: "nurtio",
         title: "Donker Groep",
         image: "donker.webp",
-        subtitle: "Nurtio Protect",
       },
     ],
   }, // https://donkergroep.com/nl/donker-interieur/

@@ -9,7 +9,7 @@
     <v-img
       class="mt-2"
       cover
-      :height="props.child ? '78%' : '90%'"
+      :height="props.child ? '90%' : '100%'"
       :src="image"
     />
   </v-card>

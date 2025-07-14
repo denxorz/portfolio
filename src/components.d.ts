@@ -9,8 +9,18 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
+    copy: typeof import('./components/ProjectSiqura copy.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     Project: typeof import('./components/Project.vue')['default']
+    ProjectCell: typeof import('./components/ProjectCell.vue')['default']
+    ProjectFlexposure: typeof import('./components/ProjectFlexposure.vue')['default']
+    ProjectHobby: typeof import('./components/ProjectHobby.vue')['default']
+    ProjectNurtio: typeof import('./components/ProjectNurtio.vue')['default']
+    ProjectOBG: typeof import('./components/ProjectOBG.vue')['default']
+    ProjectPriva: typeof import('./components/ProjectPriva.vue')['default']
+    ProjectSioux: typeof import('./components/ProjectSioux.vue')['default']
+    ProjectSiqura: typeof import('./components/ProjectSiqura.vue')['default']
+    ProjectSupershift: typeof import('./components/ProjectSupershift.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
