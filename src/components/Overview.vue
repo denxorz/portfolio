@@ -1,6 +1,6 @@
 <template>
   <v-container class="fill-height" max-width="1440px">
-    <div>
+    <div class="mb-2">
       <!-- <v-img class="mb-4" height="150" src="@/assets/logo.png" /> -->
 
       <div class="mb-8 text-center">
@@ -157,7 +157,7 @@ const projects = [
       },
       {
         employer: "siqura",
-        title: "Asfinag",
+        title: "ASFinAG",
         image: "asfinag.jpg",
       },
       {
@@ -276,17 +276,16 @@ const projects = [
     cols: 6,
     children: [
       {
-        employer: "flexposure",
-        title: "Interparking",
-        image: "interparking.webp",
+        employer: "hobby",
+        title: "Satisfactory AWS Server",
+        image: "satisfactory.jpg",
       },
       {
-        employer: "siqura",
-        title: "Highway Taiwan",
-        image: "taiwan.jpg",
-        subtitle: "TKH Security - Siqura Network Recorder",
+        employer: "nurtio",
+        title: "Bloom & Flourish",
+        image: "bloom.jpg",
+        // https://bloomandflourishco.com/
       },
-
       {
         employer: "priva",
         title: "SK Roses",
@@ -299,11 +298,33 @@ const projects = [
       },
     ],
   }, // https://donkergroep.com/nl/donker-interieur/
+
+  {
+    employer: "hobby",
+    title: "Open Plantbook API",
+    image: "plantbook.webp",
+  },
+  {
+    employer: "siqura",
+    title: "Highway Taiwan",
+    image: "taiwan.jpg",
+    subtitle: "TKH Security - Siqura Network Recorder",
+  },
+  {
+    employer: "hobby",
+    title: "Thingsmobile API",
+    image: "tm.jpg",
+  },
+  {
+    employer: "flexposure",
+    title: "Interparking",
+    image: "interparking.webp",
+  },
 ];
 
 //  { title: "greenoak" }, //  https://greenoakms.com/garden-center/
 //
-// https://bloomandflourishco.com/
+
 // https://www.naturesgreen.nl/nl/
 // https://green-roofs.co.uk/
 // https://foliagedesign.com/

@@ -1,5 +1,5 @@
 <template>
-  <ProjectBasic v-bind="{ ...props, subtitle: 'Hobby project' }" />
+  <ProjectBasic v-bind="{ ...props, subtitle: 'Opensource contributions' }" />
 </template>
 
 <script setup lang="ts">
