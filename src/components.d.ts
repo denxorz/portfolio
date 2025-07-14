@@ -10,6 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    Overview: typeof import('./components/Overview.vue')['default']
     ProjectBasic: typeof import('./components/ProjectBasic.vue')['default']
     ProjectCell: typeof import('./components/ProjectCell.vue')['default']
     ProjectFlexposure: typeof import('./components/ProjectFlexposure.vue')['default']
