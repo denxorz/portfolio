@@ -1,5 +1,5 @@
 <template>
-  <component :is="getTypeFromEmployer(props.employer ?? '')" v-bind="props" />
+  <component :is="getTypeFromEmployer(props.project)" v-bind="props" />
 </template>
 
 <script setup lang="ts">
@@ -11,18 +11,13 @@ import ProjectPriva from "@/components/ProjectPriva.vue";
 import ProjectHobby from "@/components/ProjectHobby.vue";
 import ProjectOBG from "@/components/ProjectOBG.vue";
 import ProjectSioux from "@/components/ProjectSioux.vue";
-import Project from "@/components/Project.vue";
+import ProjectBasic from "@/components/ProjectBasic.vue";
+import type { Project } from "./types/project";
 
-const props = defineProps<{
-  employer?: string;
-  title: string;
-  image?: string;
-  big?: boolean;
-  child?: boolean;
-}>();
+const props = defineProps<{ project: Project; child?: boolean }>();
 
-const getTypeFromEmployer = (employer: string) => {
-  switch (employer) {
+const getTypeFromEmployer = (project: Project) => {
+  switch (project.employer) {
     case "flexposure":
       return ProjectFlexposure;
     case "siqura":
@@ -40,7 +35,7 @@ const getTypeFromEmployer = (employer: string) => {
     case "sioux":
       return ProjectSioux;
     default:
-      return Project;
+      return ProjectBasic;
   }
 };
 </script>

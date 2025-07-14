@@ -1,12 +1,9 @@
 <template>
-  <Project v-bind="{ ...props, subtitle: 'Nurtio Protect' }" />
+  <ProjectBasic v-bind="{ ...props, subtitle: 'Nurtio Protect' }" />
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
-  title: string;
-  image?: string;
-  big?: boolean;
-  child?: boolean;
-}>();
+import type { Project } from "./types/project";
+
+const props = defineProps<{ project: Project }>();
 </script>

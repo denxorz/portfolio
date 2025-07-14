@@ -1,14 +1,11 @@
 <template>
-  <Project
+  <ProjectBasic
     v-bind="{ ...props, subtitle: 'TKH Security - Siqura Network Recorder' }"
   />
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
-  title: string;
-  image?: string;
-  big?: boolean;
-  child?: boolean;
-}>();
+import type { Project } from "./types/project";
+
+const props = defineProps<{ project: Project }>();
 </script>

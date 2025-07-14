@@ -18,37 +18,7 @@
         </v-col>
 
         <v-row>
-          <template v-for="(project, imgIdx) in projects" :key="imgIdx">
-            <v-col v-if="!project.children" :cols="project.cols ?? 3">
-              <ProjectCell
-                :employer="project.employer"
-                :title="project.title"
-                :big="project.big"
-                :image="project.image"
-              />
-            </v-col>
-
-            <v-col
-              v-if="project.children"
-              class="d-flex flex-column"
-              :cols="project?.cols ?? 6"
-            >
-              <v-row>
-                <v-col
-                  v-for="(child, childIdx) in project.children"
-                  :key="childIdx"
-                  :cols="child.cols ?? 6"
-                >
-                  <ProjectCell
-                    :employer="child.employer ?? ''"
-                    :title="child.title"
-                    :image="child.image"
-                    child
-                  />
-                </v-col>
-              </v-row>
-            </v-col>
-          </template>
+          <ProjectsGrid :projects="projects" />
         </v-row>
 
         <v-col cols="12">
@@ -121,6 +91,9 @@ const projects = [
     image: "icc.webp",
   },
   {
+    employer: "",
+    title: "",
+    image: "",
     cols: 6,
     children: [
       {
@@ -168,6 +141,9 @@ const projects = [
   },
 
   {
+    employer: "",
+    title: "",
+    image: "",
     cols: 6,
     children: [
       {
@@ -223,6 +199,9 @@ const projects = [
   }, // https://www.leaflike.co.uk/
 
   {
+    employer: "",
+    title: "",
+    image: "",
     cols: 6,
     children: [
       {
@@ -287,6 +266,9 @@ const projects = [
   },
 
   {
+    employer: "",
+    title: "",
+    image: "",
     cols: 6,
     children: [
       {
