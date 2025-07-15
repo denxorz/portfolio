@@ -3,6 +3,8 @@
     density="compact"
     height="100%"
     :max-height="props.project.big === true ? '84vh' : '40vh'"
+    @click="$emit('click')"
+    style="cursor: pointer;"
   >
     <v-card-title>{{ props.project.title }}</v-card-title>
     <v-card-subtitle>{{ props.subtitle }}</v-card-subtitle>

@@ -102,6 +102,17 @@
 <script setup lang="ts">
 import { MapChart, WorldMap } from "vue3-map-chart";
 import "vue3-map-chart/dist/style.css";
+import type { EmployerProject } from "./types/project";
+import {
+  flexposureProject,
+  siquraProject,
+  supershiftProject,
+  nurtioProject,
+  privaProject,
+  hobbyProject,
+  obgProject,
+  siouxProject,
+} from "./types/project";
 
 const data = {
   US: 70,
@@ -117,120 +128,100 @@ const data = {
   CA: 70,
 };
 
-const projects = [
-  {
-    employer: "flexposure",
+const projects: EmployerProject[] = [
+  flexposureProject({
     title: "ICC",
     cols: 6,
     big: true,
     image: "icc.avif",
-  },
+  }),
   {
     employer: "",
     title: "",
     image: "",
     cols: 6,
     children: [
-      {
-        employer: "flexposure",
+      flexposureProject({
         title: "QPark",
         image: "qpark.avif",
-      },
-      {
-        employer: "nurtio",
+      }),
+      nurtioProject({
         title: "Zuidkoop - NextDelft",
         image: "zuidkoop.avif",
-      },
-      {
-        employer: "priva",
+      }),
+      privaProject({
         title: "Mucci Farms",
         image: "mucci.avif",
-      },
-      {
-        employer: "flexposure",
+      }),
+      flexposureProject({
         title: "Eurojust",
         image: "eurojust2.avif",
-      },
+      }),
     ],
   },
-
-  {
-    employer: "nurtio",
+  nurtioProject({
     title: "Plant Solutions",
     image: "plantsolutions.avif",
-  },
-  {
-    employer: "supershift",
+  }),
+  supershiftProject({
     title: "Landal",
     image: "landal.avif",
-  },
-  {
-    employer: "sioux",
+  }),
+  siouxProject({
     title: "BESI",
     image: "besi.avif",
-  },
-  {
-    employer: "nurtio",
+  }),
+  nurtioProject({
     title: "Universal Floral",
     image: "uf.avif",
-  },
-
+  }),
   {
     employer: "",
     title: "",
     image: "",
     cols: 6,
     children: [
-      {
-        employer: "sioux",
+      siouxProject({
         title: "Metrohm Autolab - VIONIC powered by INTELLO",
         image: "metrohm.avif",
-      },
-      {
-        employer: "siqura",
+      }),
+      siquraProject({
         title: "ASFinAG",
         image: "asfinag.avif",
-      },
-      {
-        employer: "obg",
+      }),
+      obgProject({
         title: "First Floral Company",
         image: "firstfloral.avif",
-      }, // https://www.firstfloral.com.ua/
-      {
-        employer: "hobby",
-        title: "Satisfactory AWS Server",
-        image: "satisfactory.avif",
-      },
+      }),
+      hobbyProject({
+        title: "Open Source Contributions",
+        image: "micromedia.webp",
+      }),
     ],
   },
-  {
-    employer: "priva",
+  privaProject({
     title: "Intergrow Greenhouses",
     cols: 6,
     big: true,
     image: "intergrow.avif",
-  },
+  }),
 
-  {
-    employer: "flexposure",
+  flexposureProject({
     title: "Arrestantencomplex Borne",
     image: "borne.avif",
-  },
-  {
-    employer: "siqura",
+  }),
+  siquraProject({
     title: "RATP",
     image: "ratp.avif",
-  },
-  {
-    employer: "flexposure",
+  }),
+  flexposureProject({
     title: "Rabobank",
     image: "rabobank.avif",
-  },
-  {
-    employer: "obg",
+  }),
+  obgProject({
     title: "Leaflike",
     image: "leaflike.avif",
-  }, // https://www.leaflike.co.uk/
+  }), // https://www.leaflike.co.uk/
 
   {
     employer: "",
@@ -238,66 +229,57 @@ const projects = [
     image: "",
     cols: 6,
     children: [
-      {
-        employer: "sioux",
+      siouxProject({
         title: "Avantium",
         image: "avantium.avif",
-      },
-      {
-        employer: "flexposure",
+      }),
+      flexposureProject({
         title: "Ketheltunnel A4",
         image: "a4.avif",
-      },
+      }),
 
       {
         employer: "nurtio",
         title: "Växtvård",
         image: "vaxtvard.avif",
       }, // https://vaxtvard.se/
-      {
-        employer: "supershift",
+      supershiftProject({
         title: "Micromedia",
         image: "micromedia.avif",
-      },
+      }),
     ],
   },
-  {
-    employer: "supershift",
+  supershiftProject({
     title: "Mission:Control",
     cols: 6,
     big: true,
     image: "mc.svg",
-  }, // https://www.missioncontrol.io/
+  }), // https://www.missioncontrol.io/
 
-  {
-    employer: "nurtio",
+  nurtioProject({
     title: "Leaf Factory",
     image: "leaf.avif",
-  }, // https://www.leaffactory.nl/
+  }), // https://www.leaffactory.nl/
 
-  {
-    employer: "flexposure",
+  flexposureProject({
     title: "APCOA",
     image: "apcoa.avif",
-  },
-  {
-    employer: "priva",
+  }),
+  privaProject({
     title: "Nature Fresh Farms",
     image: "naturefresh.avif",
-  },
-  {
-    employer: "flexposure",
+  }),
+  flexposureProject({
     title: "SEIN",
     image: "sein.avif",
-  },
+  }),
 
-  {
-    employer: "priva",
+  privaProject({
     title: "Green Empire Farms",
     cols: 6,
     big: true,
     image: "greenempire.avif",
-  },
+  }),
 
   {
     employer: "",
@@ -305,66 +287,55 @@ const projects = [
     image: "",
     cols: 6,
     children: [
-      {
-        employer: "priva",
+      privaProject({
         title: "SK Roses",
         image: "skroses.avif",
-      },
-      {
-        employer: "nurtio",
+      }),
+      nurtioProject({
         title: "Bloom & Flourish",
         image: "bloom.avif",
         // https://bloomandflourishco.com/
-      },
-      {
-        employer: "flexposure",
+      }),
+      flexposureProject({
         title: "Velsertunnel A22",
         image: "velsertunnel.avif",
-      },
-      {
-        employer: "nurtio",
+      }),
+      privaProject({
         title: "Donker Groep",
         image: "donker.avif",
-      },
+      }),
     ],
   }, // https://donkergroep.com/nl/donker-interieur/
 
-  {
-    employer: "hobby",
+  hobbyProject({
     title: "Open Plantbook API",
     image: "plantbook.avif",
-  },
-  {
-    employer: "siqura",
+  }),
+  siquraProject({
     title: "Highway Taiwan",
     image: "taiwan.avif",
-  },
-  {
-    employer: "hobby",
+  }),
+  hobbyProject({
     title: "Thingsmobile API",
     image: "tm.avif",
-  },
-  {
-    employer: "flexposure",
+  }),
+  flexposureProject({
     title: "Interparking",
     image: "interparking.avif",
-  },
+  }),
 
-  {
-    employer: "nurtio",
+  nurtioProject({
     title: "Ambius UK",
     image: "ambius.avif",
-  }, // https://www.ambius.co.uk/
-  {
-    employer: "flexposure",
+  }), // https://www.ambius.co.uk/
+  flexposureProject({
     title: "Gaasperdammertunnel A9 IXAS",
     image: "a9.avif",
-  },
-  {
-    employer: "priva",
+  }),
+  privaProject({
     title: "Hexo",
     image: "hexo.avif",
-  },
+  }),
 ];
 
 //  { title: "greenoak" }, //  https://greenoakms.com/garden-center/

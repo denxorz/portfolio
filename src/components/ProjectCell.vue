@@ -1,41 +1,33 @@
 <template>
-  <component :is="getTypeFromEmployer(props.project)" v-bind="props" />
+  <ProjectBasic v-bind="{ ...props, subtitle: getSubtitle(props.project) }" @click="$emit('click')" />
 </template>
 
 <script setup lang="ts">
-import ProjectFlexposure from "@/components/ProjectFlexposure.vue";
-import ProjectSiqura from "@/components/ProjectSiqura.vue";
-import ProjectSupershift from "@/components/ProjectSupershift.vue";
-import ProjectNurtio from "@/components/ProjectNurtio.vue";
-import ProjectPriva from "@/components/ProjectPriva.vue";
-import ProjectHobby from "@/components/ProjectHobby.vue";
-import ProjectOBG from "@/components/ProjectOBG.vue";
-import ProjectSioux from "@/components/ProjectSioux.vue";
 import ProjectBasic from "@/components/ProjectBasic.vue";
 import type { Project } from "./types/project";
 
 const props = defineProps<{ project: Project; child?: boolean }>();
 
-const getTypeFromEmployer = (project: Project) => {
+function getSubtitle(project: Project): string {
   switch (project.employer) {
     case "flexposure":
-      return ProjectFlexposure;
+      return "TKH Security Flexposure - FlinQ";
     case "siqura":
-      return ProjectSiqura;
+      return "TKH Security - Siqura Network Recorder";
     case "supershift":
-      return ProjectSupershift;
+      return "Supershift";
     case "nurtio":
-      return ProjectNurtio;
+      return "Nurtio Protect";
     case "priva":
-      return ProjectPriva;
+      return "Priva FS Performance";
     case "hobby":
-      return ProjectHobby;
+      return "Opensource contributions";
     case "obg":
-      return ProjectOBG;
+      return "One Big Green";
     case "sioux":
-      return ProjectSioux;
+      return "Sioux";
     default:
-      return ProjectBasic;
+      return project.subtitle || "";
   }
-};
+}
 </script>

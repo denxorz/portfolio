@@ -12,6 +12,7 @@ declare module 'vue' {
     Overview: typeof import('./components/Overview.vue')['default']
     ProjectBasic: typeof import('./components/ProjectBasic.vue')['default']
     ProjectCell: typeof import('./components/ProjectCell.vue')['default']
+    ProjectDialog: typeof import('./components/ProjectDialog.vue')['default']
     ProjectFlexposure: typeof import('./components/ProjectFlexposure.vue')['default']
     ProjectHobby: typeof import('./components/ProjectHobby.vue')['default']
     ProjectNurtio: typeof import('./components/ProjectNurtio.vue')['default']
