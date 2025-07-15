@@ -10,6 +10,17 @@
             Projects worked on by
           </div>
           <h1 class="text-h2 font-weight-bold">Dennis Geldhof</h1>
+          <div class="d-flex justify-center mt-2">
+            <a href="https://www.linkedin.com/in/dgeldhof/" target="_blank" rel="noopener" class="mr-2" aria-label="LinkedIn">
+              <v-icon size="28" color="white">mdi-linkedin</v-icon>
+            </a>
+            <a href="https://stackoverflow.com/users/2471080/denxorz" target="_blank" rel="noopener" class="mr-2" aria-label="Stack Overflow">
+              <v-icon size="28" color="white">mdi-stack-overflow</v-icon>
+            </a>
+            <a href="https://github.com/denxorz" target="_blank" rel="noopener" aria-label="GitHub">
+              <v-icon size="28" color="white">mdi-github</v-icon>
+            </a>
+          </div>
         </div>
       </div>
 
