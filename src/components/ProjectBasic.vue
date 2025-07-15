@@ -2,7 +2,7 @@
   <v-card
     density="compact"
     height="100%"
-    :max-height="props.project.big === true ? '52vh' : '25vh'"
+    :max-height="props.project.big === true ? '84vh' : '40vh'"
   >
     <v-card-title>{{ props.project.title }}</v-card-title>
     <v-card-subtitle>{{ props.subtitle }}</v-card-subtitle>
@@ -19,7 +19,7 @@
 import type { Project } from "./types/project";
 
 const props = //withDefaults(
-  defineProps<{ project: Project, subtitle: string }>();
+  defineProps<{ project: Project; subtitle: string }>();
 // , {
 //   title: "",
 //   subtitle: "",

@@ -11,13 +11,30 @@
           </div>
           <h1 class="text-h2 font-weight-bold">Dennis Geldhof</h1>
           <div class="d-flex justify-center mt-2">
-            <a href="https://www.linkedin.com/in/dgeldhof/" target="_blank" rel="noopener" class="mr-2" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/in/dgeldhof/"
+              target="_blank"
+              rel="noopener"
+              class="mr-2"
+              aria-label="LinkedIn"
+            >
               <v-icon size="28" color="white">mdi-linkedin</v-icon>
             </a>
-            <a href="https://stackoverflow.com/users/2471080/denxorz" target="_blank" rel="noopener" class="mr-2" aria-label="Stack Overflow">
+            <a
+              href="https://stackoverflow.com/users/2471080/denxorz"
+              target="_blank"
+              rel="noopener"
+              class="mr-2"
+              aria-label="Stack Overflow"
+            >
               <v-icon size="28" color="white">mdi-stack-overflow</v-icon>
             </a>
-            <a href="https://github.com/denxorz" target="_blank" rel="noopener" aria-label="GitHub">
+            <a
+              href="https://github.com/denxorz"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+            >
               <v-icon size="28" color="white">mdi-github</v-icon>
             </a>
           </div>
@@ -178,7 +195,6 @@ const projects = [
         employer: "obg",
         title: "First Floral Company",
         image: "firstfloral.avif",
-        subtitle: "One Big Green",
       }, // https://www.firstfloral.com.ua/
       {
         employer: "hobby",
@@ -228,11 +244,11 @@ const projects = [
         image: "avantium.webp",
       },
       {
-        employer: "priva",
-        title: "Hexo",
-        image: "hexo.jpg",
-        subtitle: "Priva - FS Performance",
+        employer: "flexposure",
+        title: "Ketheltunnel A4",
+        image: "a4.avif",
       },
+
       {
         employer: "nurtio",
         title: "Växtvård",
@@ -241,7 +257,7 @@ const projects = [
       {
         employer: "supershift",
         title: "Micromedia",
-        image: "micromedia.webp",
+        image: "micromedia.png",
       },
     ],
   },
@@ -260,10 +276,10 @@ const projects = [
   }, // https://www.leaffactory.nl/
 
   {
-    employer: "nurtio",
-    title: "Ambius UK",
-    image: "ambius.jpg",
-  }, // https://www.ambius.co.uk/
+    employer: "flexposure",
+    title: "APCOA",
+    image: "apcoa.jpg",
+  },
   {
     employer: "priva",
     title: "Nature Fresh Farms",
@@ -301,9 +317,9 @@ const projects = [
         // https://bloomandflourishco.com/
       },
       {
-        employer: "priva",
-        title: "SK Roses",
-        image: "skroses.jpg",
+        employer: "flexposure",
+        title: "Velsertunnel A22",
+        image: "velsertunnel.jpg",
       },
       {
         employer: "nurtio",
@@ -322,7 +338,6 @@ const projects = [
     employer: "siqura",
     title: "Highway Taiwan",
     image: "taiwan.jpg",
-    subtitle: "TKH Security - Siqura Network Recorder",
   },
   {
     employer: "hobby",
@@ -333,6 +348,22 @@ const projects = [
     employer: "flexposure",
     title: "Interparking",
     image: "interparking.webp",
+  },
+
+  {
+    employer: "nurtio",
+    title: "Ambius UK",
+    image: "ambius.jpg",
+  }, // https://www.ambius.co.uk/
+  {
+    employer: "flexposure",
+    title: "Gaasperdammertunnel A9 IXAS",
+    image: "a9.jpg",
+  },
+  {
+    employer: "priva",
+    title: "Hexo",
+    image: "hexo.jpg",
   },
 ];
 
