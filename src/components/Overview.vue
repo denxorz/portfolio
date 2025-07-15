@@ -1,15 +1,16 @@
 <template>
   <v-container class="fill-height" max-width="1440px">
     <div class="mb-2">
-      <v-avatar class="mb-4" size="150px">
-        <v-img height="150" src="@/assets/fotovierkant.png" />
-      </v-avatar>
-
-      <div class="mb-8 text-center">
-        <div class="text-body-2 font-weight-light mb-n1">
-          Projects worked on by
+      <div class="d-flex align-center justify-center mb-8">
+        <v-avatar class="mr-4" size="72px">
+          <v-img height="72" src="@/assets/fotovierkant.png" />
+        </v-avatar>
+        <div class="text-center">
+          <div class="text-body-2 font-weight-light mb-n1">
+            Projects worked on by
+          </div>
+          <h1 class="text-h2 font-weight-bold">Dennis Geldhof</h1>
         </div>
-        <h1 class="text-h2 font-weight-bold">Dennis Geldhof</h1>
       </div>
 
       <v-row>
