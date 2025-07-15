@@ -18,19 +18,9 @@
 <script setup lang="ts">
 import type { Project } from "./types/project";
 
-const props = //withDefaults(
-  defineProps<{ project: Project; subtitle: string }>();
-// , {
-//   title: "",
-//   subtitle: "",
-//   image: "404",
-//   big: false,
-//   child: false,
-// });
+const props = defineProps<{ project: Project; subtitle: string }>();
 
-function getImageUrl(name: string) {
-  return new URL(`../assets/projects/${name}`, import.meta.url).href;
-}
-
-const image = computed(() => getImageUrl(props.project.image));
+const image = computed(() =>
+  props.project.image ? `/assets/projects/${props.project.image}` : ''
+);
 </script>

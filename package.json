@@ -5,7 +5,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "resize-images": "node scripts/resize-images.mjs",
+    "build": "npm run resize-images && vite build",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
@@ -28,6 +29,7 @@
     "npm-run-all2": "^7.0.2",
     "pinia": "^3.0.1",
     "sass-embedded": "^1.86.3",
+    "sharp": "^0.34.3",
     "typescript": "~5.8.2",
     "unplugin-auto-import": "^19.1.1",
     "unplugin-fonts": "^1.3.1",
