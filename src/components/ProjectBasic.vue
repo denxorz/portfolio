@@ -1,8 +1,7 @@
 <template>
   <v-card
     density="compact"
-    height="100%"
-    :max-height="props.project.big === true ? '52vh' : '25vh'"
+    :height="props.project.big === true ? '625px' : '300px'"
     @click="$emit('click')"
     style="cursor: pointer"
   >
