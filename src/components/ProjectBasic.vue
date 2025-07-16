@@ -2,7 +2,7 @@
   <v-card
     density="compact"
     height="100%"
-    :max-height="props.project.big === true ? '54vh' : '25vh'"
+    :max-height="props.project.big === true ? '52vh' : '25vh'"
     @click="$emit('click')"
     style="cursor: pointer"
   >
