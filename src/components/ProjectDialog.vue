@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="dialog" max-width="700">
     <v-card v-if="project" class="pa-4">
-      <v-row class="mb-2" align="center" no-gutters>
+      <v-row class="mb-2" no-gutters>
         <v-col cols="5" class="d-flex align-center pr-4">
           <v-img
             v-if="project.image"
@@ -11,7 +11,7 @@
             class="rounded-lg elevation-3 project-dialog-img"
           />
         </v-col>
-        <v-col cols="7" class="pl-4">
+        <v-col cols="7" class="pl-4 d-flex flex-column" style="align-self: flex-start;">
           <v-card-title class="text-h5 mb-2 pa-0">{{ project.title }}</v-card-title>
           <v-card-subtitle class="mb-2 pa-0">{{ project.subtitle ?? '' }}</v-card-subtitle>
           <div v-if="project.url" class="mb-2">
