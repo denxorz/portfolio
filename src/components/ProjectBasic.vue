@@ -2,9 +2,9 @@
   <v-card
     density="compact"
     height="100%"
-    :max-height="props.project.big === true ? '84vh' : '40vh'"
+    :max-height="props.project.big === true ? '54vh' : '25vh'"
     @click="$emit('click')"
-    style="cursor: pointer;"
+    style="cursor: pointer"
   >
     <v-card-title>{{ props.project.title }}</v-card-title>
     <v-card-subtitle>{{ props.subtitle }}</v-card-subtitle>
@@ -23,6 +23,6 @@ import type { Project } from "./types/project";
 const props = defineProps<{ project: Project; subtitle: string }>();
 
 const image = computed(() =>
-  props.project.image ? `/assets/projects/${props.project.image}` : ''
+  props.project.image ? `/assets/projects/${props.project.image}` : ""
 );
 </script>
