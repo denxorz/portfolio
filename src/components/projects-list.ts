@@ -213,7 +213,7 @@ export const projects: Project[] = [
   supershiftProject({
     title: "Micromedia",
     image: "micromedia.avif",
-    info: "Micromedia is a company that provides digital media solutions, including web development, digital marketing, and content creation services.",
+    info: "Micromedia is a company that provides digital media solutions. Their software is the leading platform in the Netherlands for publishers and retials to sell (CD) keys and prepaid card for software.",
     url: "https://www.micromedia.com/",
     tags: [      
       "no green in logo",
@@ -252,7 +252,7 @@ export const projects: Project[] = [
   flexposureProject({
     title: "SEIN",
     image: "sein.avif",
-    info: "SEIN is a Dutch organization that provides specialized care and support for individuals with complex psychiatric disorders, focusing on rehabilitation and integration into society.",
+    info: "SEIN is a Dutch organization that provides specialized care and support for individuals with epilepsy.",
     url: "https://www.sein.nl/",
     tags: [
       "no green in logo",
@@ -320,7 +320,7 @@ export const projects: Project[] = [
   hobbyProject({
     title: "Thingsmobile API",
     image: "tm.avif",
-    info: "Thingsmobile API is a platform that provides APIs for IoT and smart device management, enabling developers to build and integrate IoT solutions easily.",
+    info: "Thingsmobile is a platform that provides simcards for IoT and smart device management, enabling developers to build and integrate IoT solutions easily.",
     url: "https://www.thingsmobile.com/",
     tags: ["no green in logo", "with dotnet C#", "not in Netherlands"],
   }),
