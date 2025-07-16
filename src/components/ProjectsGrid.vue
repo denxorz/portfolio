@@ -25,11 +25,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import ProjectDialog from './ProjectDialog.vue';
+import { ref } from "vue";
+import ProjectDialog from "./ProjectDialog.vue";
 import type { Project } from "./types/project";
 
-const props = defineProps<{ projects: Project[] }>();
+defineProps<{ projects: Project[] }>();
 
 const dialog = ref(false);
 const selectedProject = ref<Project | null>(null);

@@ -9,6 +9,7 @@ export type Project = {
   info?: string;
   url?: string;
   productInfo?: string;
+  tags: string[];
 };
 
 // Factory functions for each employer
