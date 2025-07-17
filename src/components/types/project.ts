@@ -1,7 +1,7 @@
 export type Project = {
   title: string;
   image: string;
-  cols?: number;
+  halfWidth?: boolean;
   big?: boolean;
   children?: Project[];
   child?: boolean;

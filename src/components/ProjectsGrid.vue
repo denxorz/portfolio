@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <template v-for="(project, imgIdx) in projects" :key="imgIdx">
-      <v-col v-if="!project.children" cols="12" sm="6" md="4" lg="3">
+      <v-col v-if="!project.children" sm="12" :lg="project.halfWidth ? 6 : 3" cols="12" >
         <ProjectCell :project="project" @click="openDialog(project)" />
       </v-col>
 

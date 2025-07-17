@@ -1,5 +1,5 @@
 <template>
-  <v-container class="fill-height" max-width="1440px">
+  <v-container class="fill-height" :max-width="$vuetify.display.smAndDown ? '100vw' : '1440px'" style="padding: 0;">
     <div class="mb-2">
       <div class="d-flex flex-column flex-md-row align-center justify-center mb-8">
         <v-avatar class="mr-0 mr-md-4 mb-2 mb-md-0" size="72px">
@@ -29,12 +29,14 @@
       <!-- Map and Tag Filter responsive layout -->
       <v-row class="mb-4" align="center">
         <v-col cols="12" md="7" class="mb-4 mb-md-0">
-          <MapChart :data="data">
-            <WorldMap />
-          </MapChart>
+          <div class="map-responsive">
+            <MapChart :data="data">
+              <WorldMap />
+            </MapChart>
+          </div>
         </v-col>
         <v-col cols="12" md="5">
-          <div class="d-flex flex-wrap gap-2 justify-center">
+          <div class="tag-filter-responsive d-flex flex-wrap gap-2 justify-center">
             <v-chip v-for="tag in allTags" :key="tag" :color="selectedTag === tag ? 'primary' : 'default'"
               :variant="selectedTag === tag ? 'elevated' : 'outlined'" class="ma-1" @click="toggleTag(tag)"
               style="cursor: pointer; user-select: none">
@@ -181,14 +183,14 @@ const projectsWithLayout = computed<Project[]>(() => {
     const firstBatch = projectsToLayout.slice(0, 18);
     projectsToLayout = projectsToLayout.slice(18);
 
-    layout.push({ ...firstBatch[0], cols: 6, big: true });
+    layout.push({ ...firstBatch[0], halfWidth: true, big: true });
 
     layout.push({
       title: "",
       image: "",
       info: "",
       url: "",
-      cols: 6,
+      halfWidth: true,
       tags: [],
       children: firstBatch.slice(1, 5).map((c: Project) => ({ ...c, child: true })),
     });
@@ -215,14 +217,14 @@ const projectsWithLayout = computed<Project[]>(() => {
         image: "",
         info: "",
         url: "",
-        cols: 6,
+        halfWidth: true,
         tags: [],
         children: firstBatch.slice(9, 13).map((c: Project) => ({ ...c, child: true })),
       });
     }
 
     if (firstBatch.length > 13) {
-      layout.push({ ...firstBatch[13], cols: 6, big: true });
+      layout.push({ ...firstBatch[13], halfWidth: true, big: true });
     }
 
     if (firstBatch.length > 14) {
@@ -256,5 +258,21 @@ const projectsWithLayout = computed<Project[]>(() => {
   .mb-md-0 {
     margin-bottom: 0 !important;
   }
+  .map-responsive {
+    max-width: 100vw;
+    overflow-x: auto;
+  }
+  .map-responsive svg {
+    max-width: 100vw !important;
+    height: auto !important;
+  }
+  .tag-filter-responsive {
+    max-width: 100vw;
+    overflow-x: visible;
+    /* Remove nowrap and justify-content for wrapping */
+  }
+}
+:global(body) {
+  overflow-x: hidden;
 }
 </style>
