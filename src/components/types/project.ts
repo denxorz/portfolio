@@ -26,7 +26,7 @@ export function flexposureProject(data: Omit<Project, 'subtitle'>): Project {
       "on premises",
       "with dotnet C#",
       "with WPF",
-      "with WCF"
+      "communicates with WCF"
     ]
   };
 }
@@ -43,7 +43,7 @@ export function siquraProject(data: Omit<Project, 'subtitle'>): Project {
       "on premises",
       "with dotnet C#",
       "with WinForms",
-      "with WCF"
+      "communicates with WCF"
     ]
   };
 }

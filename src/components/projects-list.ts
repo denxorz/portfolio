@@ -85,7 +85,7 @@ export const projects: Project[] = [
     image: "satisfactory.avif",
     info: "Manages a Satisfactory dedicated AWS server through a VueJS page.",
     url: "https://github.com/denxorz/satisfactory-server-aws/",
-    tags: ["no green in logo", "with Vuejs", "on AWS Cloud"],
+    tags: ["no green in logo", "with Vuejs", "on AWS Cloud", "does not use dotnet C#"],
   }),
   nurtioProject({
     title: "Universal Floral",
