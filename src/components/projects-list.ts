@@ -70,19 +70,22 @@ export const projects: Project[] = [
       "not in Netherlands",
     ],
   }),
-  supershiftProject({
-    title: "Landal",
-    image: "landal.avif",
-    info: "Landal GreenParks is a Dutch company that operates holiday parks in the Netherlands, Germany, Belgium, Austria, Switzerland, and the Czech Republic. They offer a range of accommodations and activities in natural settings.",
-    url: "https://www.landal.com/",
-    tags: [],
+  flexposureProject({
+    title: "Ketheltunnel A4",
+    image: "a4.avif",
+    info: "The Ketheltunnel A4 is a major road tunnel in the Netherlands, part of the A4 motorway. It plays a crucial role in facilitating traffic flow and reducing congestion in the region.",
+    url: "https://www.rijkswaterstaat.nl/wegen/a4-ketheltunnel",
+    tags: [      
+      "involves cars",
+      "(partially) underground",
+    ],
   }),
-  siouxProject({
-    title: "BESI",
-    image: "besi.avif",
-    info: "BE Semiconductor Industries N.V. (BESI) is a Dutch company that designs and manufactures equipment for the semiconductor industry, specializing in advanced packaging and assembly solutions.",
-    url: "https://www.besi.com/",
-    tags: [],
+  hobbyProject({
+    title: "Satisfactory AWS Server",
+    image: "satisfactory.avif",
+    info: "Manages a Satisfactory dedicated AWS server through a VueJS page.",
+    url: "https://github.com/denxorz/satisfactory-server-aws/",
+    tags: ["no green in logo", "with Vuejs", "on AWS Cloud"],
   }),
   nurtioProject({
     title: "Universal Floral",
@@ -137,14 +140,13 @@ export const projects: Project[] = [
       "not in Netherlands",
     ],
   }),
-
-  flexposureProject({
-    title: "Arrestantencomplex Borne",
-    image: "borne.avif",
-    info: "Arrestantencomplex Borne is a detention facility in the Netherlands, designed to hold individuals awaiting trial or serving short sentences. It focuses on security and rehabilitation.",
-    url: "https://deriddersafeandsecure.com/klantencases/arrestantencomplex-borne/",
+  nurtioProject({
+    title: "Växtvård",
+    image: "vaxtvard.avif",
+    info: "Växtvård is a Swedish company specializing in plant care and maintenance services for both residential and commercial clients.",
+    url: "https://vaxtvard.se/",
     tags: [
-      "no green in logo",
+           "not in Netherlands",
     ],
   }),
   siquraProject({
@@ -175,13 +177,13 @@ export const projects: Project[] = [
       "not in Netherlands",
     ],
   }),
-  supershiftProject({
-    title: "Mission:Control",
-    image: "mc.svg",
-    info: "Mission:Control is a platform that provides tools and services for managing and optimizing the operations, focusing on efficiency and productivity for the game industry.",
-    url: "https://www.missioncontrol.io/",
+  privaProject({
+    title: "Green Empire Farms",
+    image: "greenempire.avif",
+    info: "Mastronardi Green Empire Farms is a greenhouse grower in the United States, specializing in high-quality tomatoes and other produce. They focus on sustainable practices and innovative growing techniques.",
+    url: "https://www.sunsetgrown.com/",
     tags: [
-      "no green in logo",
+      "not in Netherlands",
     ],
   }),
   siouxProject({
@@ -191,23 +193,20 @@ export const projects: Project[] = [
     url: "https://www.avantium.com/",
     tags: [ "no green in logo", "on premises"],
   }),
-  flexposureProject({
-    title: "Ketheltunnel A4",
-    image: "a4.avif",
-    info: "The Ketheltunnel A4 is a major road tunnel in the Netherlands, part of the A4 motorway. It plays a crucial role in facilitating traffic flow and reducing congestion in the region.",
-    url: "https://www.rijkswaterstaat.nl/wegen/a4-ketheltunnel",
-    tags: [      
-      "involves cars",
-      "(partially) underground",
-    ],
+  supershiftProject({
+    title: "Landal",
+    image: "landal.avif",
+    info: "Landal GreenParks is a Dutch company that operates holiday parks in the Netherlands, Germany, Belgium, Austria, Switzerland, and the Czech Republic. They offer a range of accommodations and activities in natural settings.",
+    url: "https://www.landal.com/",
+    tags: [],
   }),
-  nurtioProject({
-    title: "Växtvård",
-    image: "vaxtvard.avif",
-    info: "Växtvård is a Swedish company specializing in plant care and maintenance services for both residential and commercial clients.",
-    url: "https://vaxtvard.se/",
+  flexposureProject({
+    title: "Arrestantencomplex Borne",
+    image: "borne.avif",
+    info: "Arrestantencomplex Borne is a detention facility in the Netherlands, designed to hold individuals awaiting trial or serving short sentences. It focuses on security and rehabilitation.",
+    url: "https://deriddersafeandsecure.com/klantencases/arrestantencomplex-borne/",
     tags: [
-           "not in Netherlands",
+      "no green in logo",
     ],
   }),
   supershiftProject({
@@ -219,7 +218,6 @@ export const projects: Project[] = [
       "no green in logo",
     ],
   }),
-
   nurtioProject({
     title: "Leaf Factory",
     image: "leaf.avif",
@@ -296,13 +294,13 @@ export const projects: Project[] = [
       "no green in logo",
     ],
   }),
-  privaProject({
-    title: "Green Empire Farms",
-    image: "greenempire.avif",
-    info: "Mastronardi Green Empire Farms is a greenhouse grower in the United States, specializing in high-quality tomatoes and other produce. They focus on sustainable practices and innovative growing techniques.",
-    url: "https://www.sunsetgrown.com/",
+  supershiftProject({
+    title: "Mission:Control",
+    image: "mc.svg",
+    info: "Mission:Control is a platform that provides tools and services for managing and optimizing the operations, focusing on efficiency and productivity for the game industry.",
+    url: "https://www.missioncontrol.io/",
     tags: [
-      "not in Netherlands",
+      "no green in logo",
     ],
   }),
   siquraProject({
@@ -364,5 +362,12 @@ export const projects: Project[] = [
       "no green in logo",
       "not in Netherlands",
     ],
+  }),
+  siouxProject({
+    title: "BESI",
+    image: "besi.avif",
+    info: "BE Semiconductor Industries N.V. (BESI) is a Dutch company that designs and manufactures equipment for the semiconductor industry, specializing in advanced packaging and assembly solutions.",
+    url: "https://www.besi.com/",
+    tags: [],
   }),
 ];
