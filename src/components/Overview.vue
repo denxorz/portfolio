@@ -3,7 +3,7 @@
     <div class="mb-2">
       <div class="d-flex flex-column flex-md-row align-center justify-center mb-8">
         <v-avatar class="mr-0 mr-md-4 mb-2 mb-md-0" size="72px">
-          <v-img height="72" src="@/assets/fotovierkant.png" />
+          <v-img height="72" src="/assets/projects/me.avif" />
         </v-avatar>
         <div class="text-center">
           <div class="text-body-2 font-weight-light mb-n1">
@@ -47,6 +47,11 @@
       </v-row>
 
       <v-row>
+        <template v-if="selectedTag === 'involves cats'">
+          <v-col cols="12">
+            <Cats />
+          </v-col>
+        </template>
         <ProjectsGrid :projects="projectsWithLayout" />
 
         <!-- <v-col cols="12">
@@ -105,9 +110,7 @@ const data = {
   CA: 70,
 };
 
-//  { title: "greenoak" }, //  https://greenoakms.com/garden-center/
-//
-
+//  https://greenoakms.com/garden-center/
 // https://www.naturesgreen.nl/nl/
 // https://green-roofs.co.uk/
 // https://foliagedesign.com/
@@ -269,7 +272,6 @@ const projectsWithLayout = computed<Project[]>(() => {
   .tag-filter-responsive {
     max-width: 100vw;
     overflow-x: visible;
-    /* Remove nowrap and justify-content for wrapping */
   }
 }
 :global(body) {
