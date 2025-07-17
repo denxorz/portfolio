@@ -1,17 +1,17 @@
 <template>
-  <v-dialog v-model="dialog" max-width="700">
+  <v-dialog v-model="dialog" :max-width="$vuetify.display.smAndDown ? '100vw' : '700'">
     <v-card v-if="project" class="pa-4">
-      <v-row class="mb-2" no-gutters>
-        <v-col cols="5" class="d-flex align-center pr-4">
+      <v-row class="mb-2" no-gutters :class="$vuetify.display.smAndDown ? 'flex-column' : ''">
+        <v-col :cols="$vuetify.display.smAndDown ? 12 : 5" class="d-flex align-center pr-4 pb-2">
           <v-img
             v-if="project.image"
             :src="`/assets/projects/${project.image}`"
-            height="220"
+            :height="$vuetify.display.smAndDown ? '160' : '220'"
             cover
             class="rounded-lg elevation-3 project-dialog-img"
           />
         </v-col>
-        <v-col cols="7" class="pl-4 d-flex flex-column" style="align-self: flex-start;">
+        <v-col :cols="$vuetify.display.smAndDown ? 12 : 7" class="pl-4 d-flex flex-column" style="align-self: flex-start;">
           <v-card-title class="text-h5 mb-2 pa-0">{{ project.title }}</v-card-title>
           <v-card-subtitle class="mb-2 pa-0">{{ project.subtitle ?? '' }}</v-card-subtitle>
           <div v-if="project.url" class="mb-2">
@@ -59,8 +59,14 @@ function close() {
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.10);
   width: 100%;
+  max-width: 100%;
 }
 .v-card {
   padding: 24px !important;
+}
+@media (max-width: 600px) {
+  .v-card {
+    padding: 12px !important;
+  }
 }
 </style> 
