@@ -1,34 +1,34 @@
 <template>
   <v-container class="fill-height" max-width="1440px">
     <div class="mb-2">
-      <div class="d-flex align-center justify-center mb-8">
-        <v-avatar class="mr-4" size="72px">
+      <div class="d-flex flex-column flex-md-row align-center justify-center mb-8">
+        <v-avatar class="mr-0 mr-md-4 mb-2 mb-md-0" size="72px">
           <v-img height="72" src="@/assets/fotovierkant.png" />
         </v-avatar>
         <div class="text-center">
           <div class="text-body-2 font-weight-light mb-n1">
             Projects worked on by
           </div>
-          <h1 class="text-h2 font-weight-bold">Dennis Geldhof</h1>
-          <div class="d-flex justify-center mt-2">
-            <a href="https://www.linkedin.com/in/dgeldhof/" target="_blank" rel="noopener" class="mr-2"
+          <h1 class="text-h4 text-md-h2 font-weight-bold">Dennis Geldhof</h1>
+          <div class="d-flex justify-center mt-2 flex-wrap">
+            <a href="https://www.linkedin.com/in/dgeldhof/" target="_blank" rel="noopener" class="mr-2 mb-2"
               aria-label="LinkedIn">
               <v-icon size="28" color="white">mdi-linkedin</v-icon>
             </a>
-            <a href="https://stackoverflow.com/users/2471080/denxorz" target="_blank" rel="noopener" class="mr-2"
+            <a href="https://stackoverflow.com/users/2471080/denxorz" target="_blank" rel="noopener" class="mr-2 mb-2"
               aria-label="Stack Overflow">
               <v-icon size="28" color="white">mdi-stack-overflow</v-icon>
             </a>
-            <a href="https://github.com/denxorz" target="_blank" rel="noopener" aria-label="GitHub">
+            <a href="https://github.com/denxorz" target="_blank" rel="noopener" aria-label="GitHub" class="mb-2">
               <v-icon size="28" color="white">mdi-github</v-icon>
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Map and Tag Filter side by side -->
+      <!-- Map and Tag Filter responsive layout -->
       <v-row class="mb-4" align="center">
-        <v-col cols="12" md="7">
+        <v-col cols="12" md="7" class="mb-4 mb-md-0">
           <MapChart :data="data">
             <WorldMap />
           </MapChart>
@@ -244,3 +244,17 @@ const projectsWithLayout = computed<Project[]>(() => {
   return layout;
 });
 </script>
+
+<style scoped>
+@media (max-width: 600px) {
+  .text-h2 {
+    font-size: 2rem !important;
+  }
+  .mr-md-4 {
+    margin-right: 0 !important;
+  }
+  .mb-md-0 {
+    margin-bottom: 0 !important;
+  }
+}
+</style>
