@@ -101,7 +101,7 @@ export const projects: Project[] = [
     image: "metrohm.avif",
     info: "Metrohm Autolab is a company that specializes in electrochemical instrumentation and software solutions. VIONIC is their advanced electrochemical workstation powered by INTELLO technology, designed for high-performance research and development.",
     url: "https://www.metrohm-autolab.com/",
-    tags: [],
+    tags: ["communicates with SignalR"],
   }),
   siquraProject({
     title: "ASFinAG",

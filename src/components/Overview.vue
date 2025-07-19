@@ -6,8 +6,8 @@
           <v-img height="72" src="/assets/projects/me.avif" />
         </v-avatar>
         <div class="text-center">
-          <div class="text-body-2 font-weight-light mb-n1">
-            Projects worked on by
+          <div class="text-body-1  mb-n1">
+            Projects that work with code build by
           </div>
           <h1 class="text-h4 text-md-h2 font-weight-bold">Dennis Geldhof</h1>
           <div class="d-flex justify-center mt-2 flex-wrap">
