@@ -26,6 +26,9 @@
       <v-card-text class="mb-4" v-if="project.productInfo">
         {{ project.productInfo }}
       </v-card-text>
+      <div v-if="project.productLink" class="mb-4 px-4">
+        <a :href="project.productLink" target="_blank" rel="noopener">{{ project.productLink }}</a>
+      </div>
       <v-card-actions class="pt-2">
         <v-spacer />
         <v-btn color="primary" @click="close">Close</v-btn>
