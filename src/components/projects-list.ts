@@ -83,9 +83,9 @@ export const projects: Project[] = [
   hobbyProject({
     title: "Satisfactory AWS Server",
     image: "satisfactory.avif",
-    info: "Manages a Satisfactory dedicated AWS server through a VueJS page.",
+    info: "Manages a Satisfactory dedicated AWS server through a VueJS page. Next to controlling the server, the dashboard also shows the train, drone, and truck connections and resources transported by them.",
     url: "https://github.com/denxorz/satisfactory-server-aws/",
-    tags: ["no green in logo", "with Vuejs", "on AWS Cloud", "does not use dotnet C#"],
+    tags: ["no green in logo", "with Vuejs", "on AWS Cloud"],
   }),
   nurtioProject({
     title: "Universal Floral",
