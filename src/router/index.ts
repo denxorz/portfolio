@@ -33,4 +33,11 @@ router.isReady().then(() => {
   localStorage.removeItem('vuetify:dynamic-reload')
 })
 
+// Track route changes for Clicky Analytics
+router.afterEach((to) => {
+  if (typeof window !== 'undefined' && window.clicky) {
+    window.clicky.log(to.fullPath, document.title, 'pageview')
+  }
+})
+
 export default router
