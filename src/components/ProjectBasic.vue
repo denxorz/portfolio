@@ -2,8 +2,8 @@
   <v-card
     density="compact"
     :height="$vuetify.display.mdAndUp ? (props.project.big === true ? '625px' : '300px') : 'auto'"
-    @click="$emit('click')"
     style="cursor: pointer"
+    @click="$emit('click')"
   >
     <v-card-title>{{ props.project.title }}</v-card-title>
     <v-card-subtitle>{{ props.project.subtitle }}</v-card-subtitle>
@@ -18,11 +18,12 @@
 </template>
 
 <script setup lang="ts">
-import type { Project } from "./types/project";
+  import type { Project } from './types/project'
 
-const props = defineProps<{ project: Project }>();
+  const props = defineProps<{ project: Project }>()
+  defineEmits<{ click: [] }>()
 
-const image = computed(() =>
-  props.project.image ? `/assets/projects/${props.project.image}` : ""
-);
+  const image = computed(() =>
+    props.project.image ? `/assets/projects/${props.project.image}` : '',
+  )
 </script>

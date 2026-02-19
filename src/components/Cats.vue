@@ -3,7 +3,7 @@
     <div class="text-center  mt-2">Projects involving cats, I didn't do that yet. But I can always count on the furry-home-office-crew for some code reviews!</div>
 
     <div class="cat-cards-row">
-      <v-card      
+      <v-card
         density="compact"
         height="350"
         width="360"
@@ -82,4 +82,4 @@
     height: 140px;
   }
 }
-</style> 
+</style>

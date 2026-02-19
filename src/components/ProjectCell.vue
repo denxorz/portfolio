@@ -3,9 +3,10 @@
 </template>
 
 <script setup lang="ts">
-import ProjectBasic from "@/components/ProjectBasic.vue";
-import type { Project } from "./types/project";
+  import type { Project } from './types/project'
+  import ProjectBasic from '@/components/ProjectBasic.vue'
 
-const props = defineProps<{ project: Project; child?: boolean }>();
+  const props = defineProps<{ project: Project, child?: boolean }>()
+  defineEmits<{ click: [] }>()
 
 </script>

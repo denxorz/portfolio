@@ -11,27 +11,49 @@
           </div>
           <h1 class="text-h4 text-md-h2 font-weight-bold">Dennis Geldhof</h1>
           <div class="d-flex justify-center mt-2 flex-wrap">
-            <a href="https://www.linkedin.com/in/dgeldhof/" target="_blank" rel="noopener" class="mr-2 mb-2"
-              aria-label="LinkedIn">
-              <v-icon size="28" color="white">mdi-linkedin</v-icon>
+            <a
+              aria-label="LinkedIn"
+              class="mr-2 mb-2"
+              href="https://www.linkedin.com/in/dgeldhof/"
+              rel="noopener"
+              target="_blank"
+            >
+              <v-icon color="white" size="28">mdi-linkedin</v-icon>
             </a>
-            <a href="https://stackoverflow.com/users/2471080/denxorz" target="_blank" rel="noopener" class="mr-2 mb-2"
-              aria-label="Stack Overflow">
-              <v-icon size="28" color="white">mdi-stack-overflow</v-icon>
+            <a
+              aria-label="Stack Overflow"
+              class="mr-2 mb-2"
+              href="https://stackoverflow.com/users/2471080/denxorz"
+              rel="noopener"
+              target="_blank"
+            >
+              <v-icon color="white" size="28">mdi-stack-overflow</v-icon>
             </a>
-            <a href="https://github.com/denxorz" target="_blank" rel="noopener" aria-label="GitHub" class="mb-2">
-              <v-icon size="28" color="white">mdi-github</v-icon>
+            <a
+              aria-label="GitHub"
+              class="mb-2"
+              href="https://github.com/denxorz"
+              rel="noopener"
+              target="_blank"
+            >
+              <v-icon color="white" size="28">mdi-github</v-icon>
             </a>
           </div>
         </div>
       </div>
 
-      <v-row class="mb-4" align="center">
+      <v-row align="center" class="mb-4">
         <v-col cols="12" md="12">
           <div class="tag-filter-responsive d-flex flex-wrap gap-2 justify-center">
-            <v-chip v-for="tag in allTags" :key="tag" :color="selectedTag === tag ? 'primary' : 'default'"
-              :variant="selectedTag === tag ? 'elevated' : 'outlined'" class="ma-1" @click="toggleTag(tag)"
-              style="cursor: pointer; user-select: none">
+            <v-chip
+              v-for="tag in allTags"
+              :key="tag"
+              class="ma-1"
+              :color="selectedTag === tag ? 'primary' : 'default'"
+              style="cursor: pointer; user-select: none"
+              :variant="selectedTag === tag ? 'elevated' : 'outlined'"
+              @click="toggleTag(tag)"
+            >
               {{ tag }}
             </v-chip>
           </div>
@@ -51,119 +73,90 @@
 </template>
 
 <script setup lang="ts">
-import { projects, type Project } from "./projects-list.ts";
+  import { type Project, projects } from './projects-list.ts'
 
-//  https://greenoakms.com/garden-center/
-// https://www.naturesgreen.nl/nl/
-// https://green-roofs.co.uk/
-// https://foliagedesign.com/
-// https://growinggreenllc.com/
-// https://www.urbanplanters.co.uk/
-// https://universalfloral.com/
-// https://plantsolutions.com/
+  //  https://greenoakms.com/garden-center/
+  // https://www.naturesgreen.nl/nl/
+  // https://green-roofs.co.uk/
+  // https://foliagedesign.com/
+  // https://growinggreenllc.com/
+  // https://www.urbanplanters.co.uk/
+  // https://universalfloral.com/
+  // https://plantsolutions.com/
 
-const allTags = [
-  ...new Set(projects.flatMap((p: Project) => [...(p.tags || [])])),
-  'involves cats',
-].sort((a, b) => {
-  const isByA = a.toLowerCase().startsWith("by ");
-  const isByB = b.toLowerCase().startsWith("by ");
-  if (isByA && !isByB) return -1;
-  if (!isByA && isByB) return 1;
-  return a.localeCompare(b);
-});
+  const allTags = [
+    ...new Set(projects.flatMap((p: Project) => [...(p.tags || [])])),
+    'involves cats',
+  ].toSorted((a: string, b: string) => {
+    const isByA = a.toLowerCase().startsWith('by ')
+    const isByB = b.toLowerCase().startsWith('by ')
+    if (isByA && !isByB) return -1
+    if (!isByA && isByB) return 1
+    return a.localeCompare(b)
+  })
 
-const selectedTag = ref<string | null>(null);
+  const selectedTag = ref<string | null>(null)
 
-function toggleTag(tag: string) {
-  if (selectedTag.value === tag) {
-    selectedTag.value = null;
-  } else {
-    selectedTag.value = tag;
-  }
-}
-
-const filteredProjects = computed<Project[]>(() => {
-  if (!selectedTag.value) {
-    return projects;
+  function toggleTag (tag: string) {
+    selectedTag.value = selectedTag.value === tag ? null : tag
   }
 
-  return projects.filter((project: Project) => {
-    const matches = project.tags && project.tags.includes(selectedTag.value!);
-    return matches;
-  });
-});
-
-const projectsWithLayout = computed<Project[]>(() => {
-  let projectsToLayout = [...filteredProjects.value];
-  const layout: Project[] = [];
-
-  while (projectsToLayout.length > 0) {
-    const firstBatch = projectsToLayout.slice(0, 18);
-    projectsToLayout = projectsToLayout.slice(18);
-
-    layout.push({ ...firstBatch[0], halfWidth: true, big: true });
-
-    layout.push({
-      title: "",
-      image: "",
-      info: "",
-      url: "",
-      halfWidth: true,
-      tags: [],
-      children: firstBatch.slice(1, 5).map((c: Project) => ({ ...c, child: true })),
-    });
-
-    if (firstBatch.length > 5) {
-      layout.push(firstBatch[5]);
+  const filteredProjects = computed<Project[]>(() => {
+    if (!selectedTag.value) {
+      return projects
     }
 
-    if (firstBatch.length > 6) {
-      layout.push(firstBatch[6]);
-    }
+    return projects.filter((project: Project) => {
+      const matches = project.tags && project.tags.includes(selectedTag.value!)
+      return matches
+    })
+  })
 
-    if (firstBatch.length > 7) {
-      layout.push(firstBatch[7]);
-    }
+  const projectsWithLayout = computed<Project[]>(() => {
+    let projectsToLayout = [...filteredProjects.value]
+    const layout: Project[] = []
 
-    if (firstBatch.length > 8) {
-      layout.push(firstBatch[8]);
-    }
+    while (projectsToLayout.length > 0) {
+      const firstBatch = projectsToLayout.slice(0, 18)
+      projectsToLayout = projectsToLayout.slice(18)
 
-    if (firstBatch.length > 9) {
-      layout.push({
-        title: "",
-        image: "",
-        info: "",
-        url: "",
-        halfWidth: true,
-        tags: [],
-        children: firstBatch.slice(9, 13).map((c: Project) => ({ ...c, child: true })),
-      });
+      const first = firstBatch[0]!
+      const mid = [firstBatch[5], firstBatch[6], firstBatch[7], firstBatch[8]].filter(
+        (p): p is Project => p != null,
+      )
+      const tail = [firstBatch[14], firstBatch[15], firstBatch[16], firstBatch[17]].filter(
+        (p): p is Project => p != null,
+      )
+      const batch: Project[] = [
+        { ...first, halfWidth: true, big: true } as Project,
+        {
+          title: '',
+          image: '',
+          info: '',
+          url: '',
+          halfWidth: true,
+          tags: [],
+          children: firstBatch.slice(1, 5).map((c: Project) => ({ ...c, child: true })),
+        },
+        ...mid,
+        ...(firstBatch.length > 9
+          ? [{
+            title: '',
+            image: '',
+            info: '',
+            url: '',
+            halfWidth: true,
+            tags: [],
+            children: firstBatch.slice(9, 13).map((c: Project) => ({ ...c, child: true })),
+          }]
+          : []),
+        ...(firstBatch.length > 13 ? [{ ...firstBatch[13]!, halfWidth: true, big: true } as Project] : []),
+        ...tail,
+      ]
+      layout.push(...batch)
     }
-
-    if (firstBatch.length > 13) {
-      layout.push({ ...firstBatch[13], halfWidth: true, big: true });
-    }
-
-    if (firstBatch.length > 14) {
-      layout.push(firstBatch[14]);
-    }
-
-    if (firstBatch.length > 15) {
-      layout.push(firstBatch[15]);
-    }
-
-    if (firstBatch.length > 16) {
-      layout.push(firstBatch[16]);
-    }
-
-    if (firstBatch.length > 17) {
-      layout.push(firstBatch[17]);
-    }
-  }
-  return layout;
-});
+    return layout
+  })
 </script>
 
 <style scoped>

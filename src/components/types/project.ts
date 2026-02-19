@@ -1,20 +1,20 @@
 export type Project = {
-  title: string;
-  image: string;
-  halfWidth?: boolean;
-  big?: boolean;
-  children?: Project[];
-  child?: boolean;
-  subtitle?: string;
-  info?: string;
-  url?: string;
-  productInfo?: string;
-  productLink?: string;
-  tags: string[];
-};
+  title: string
+  image: string
+  halfWidth?: boolean
+  big?: boolean
+  children?: Project[]
+  child?: boolean
+  subtitle?: string
+  info?: string
+  url?: string
+  productInfo?: string
+  productLink?: string
+  tags: string[]
+}
 
 // Factory functions for each employer
-export function flexposureProject(data: Omit<Project, 'subtitle'>): Project {
+export function flexposureProject (data: Omit<Project, 'subtitle'>): Project {
   return {
     ...data,
     subtitle: 'TKH Security Flexposure - FlinQ',
@@ -22,17 +22,17 @@ export function flexposureProject(data: Omit<Project, 'subtitle'>): Project {
     productLink: 'https://tkhsecurity.com/system-flinq-security-management/',
     tags: [
       ...data.tags,
-      "by TKH",
-      "has cameras",
-      "24/7 operational",
-      "on premises",
-      "with dotnet C#",
-      "with WPF",
-      "communicates with WCF"
-    ]
-  };
+      'by TKH',
+      'has cameras',
+      '24/7 operational',
+      'on premises',
+      'with dotnet C#',
+      'with WPF',
+      'communicates with WCF',
+    ],
+  }
 }
-export function siquraProject(data: Omit<Project, 'subtitle'>): Project {
+export function siquraProject (data: Omit<Project, 'subtitle'>): Project {
   return {
     ...data,
     subtitle: 'TKH Security - Siqura Network Recorder',
@@ -40,65 +40,65 @@ export function siquraProject(data: Omit<Project, 'subtitle'>): Project {
     productLink: 'https://tkhsecurity.com/',
     tags: [
       ...data.tags,
-      "by TKH",
-      "has cameras",
-      "24/7 operational",
-      "on premises",
-      "with dotnet C#",
-      "with WinForms",
-      "communicates with WCF"
-    ]
-  };
+      'by TKH',
+      'has cameras',
+      '24/7 operational',
+      'on premises',
+      'with dotnet C#',
+      'with WinForms',
+      'communicates with WCF',
+    ],
+  }
 }
-export function supershiftProject(data: Omit<Project, 'subtitle'>): Project {
+export function supershiftProject (data: Omit<Project, 'subtitle'>): Project {
   return {
     ...data,
     subtitle: 'Supershift',
     productInfo: 'Supershift aims at solving complex digital business problems.',
     productLink: 'https://www.supershift.nl/',
-    tags: [...data.tags, "by Supershift", "24/7 operational", "with dotnet C#", "with Vuejs", "on Azure Cloud"]
-  };
+    tags: [...data.tags, 'by Supershift', '24/7 operational', 'with dotnet C#', 'with Vuejs', 'on Azure Cloud'],
+  }
 }
-export function nurtioProject(data: Omit<Project, 'subtitle'>): Project {
+export function nurtioProject (data: Omit<Project, 'subtitle'>): Project {
   return {
     ...data,
     subtitle: 'Nurtio Protect',
     productInfo: 'Nurtio Protect is a plant sensor SaaS platform that aims at optimizing the maintenance interval of plants. It aims at interior landscaping, for example in offices. It is build on AWS using C#, VueJS and Flutter. It uses AWS services like; Lambda, IoTCore, S3, Timestream, DynamoDB, Firehose, Cognito, Amplify, SES, and more. The whole platform runs event based, supports OTA updates of the battery power sensors. ',
     productLink: 'https://www.nurtio.com/',
-    tags: [...data.tags, "by Nurtio", "managing plants", "24/7 operational", "with dotnet C#", "with Flutter Android and iOS app", "with Vuejs", "on AWS Cloud"]
-  };
+    tags: [...data.tags, 'by Nurtio', 'managing plants', '24/7 operational', 'with dotnet C#', 'with Flutter Android and iOS app', 'with Vuejs', 'on AWS Cloud'],
+  }
 }
-export function privaProject(data: Omit<Project, 'subtitle'>): Project {
+export function privaProject (data: Omit<Project, 'subtitle'>): Project {
   return {
     ...data,
     subtitle: 'Priva FS Performance',
     productInfo: 'Priva FS Performance is a product for the horticulture greenhouse industry. It combines the performance of the employees with the performance of the crops and manages packhouse operations.',
     productLink: 'https://www.priva.com/horticulture/solutions/labor-crop-management/priva-fs-performance',
-    tags: [...data.tags, "by Priva", "managing plants", "on premises", "with dotnet C#", "running in greenhouse", "with WPF"]
-  };
+    tags: [...data.tags, 'by Priva', 'managing plants', 'on premises', 'with dotnet C#', 'running in greenhouse', 'with WPF'],
+  }
 }
-export function hobbyProject(data: Omit<Project, 'subtitle'>): Project {
+export function hobbyProject (data: Omit<Project, 'subtitle'>): Project {
   return {
     ...data,
     subtitle: 'Opensource contributions',
     productInfo: 'My contributions to opensource projects.',
     productLink: 'https://github.com/denxorz?tab=repositories',
-  };
+  }
 }
-export function obgProject(data: Omit<Project, 'subtitle'>): Project {
+export function obgProject (data: Omit<Project, 'subtitle'>): Project {
   return {
     ...data, subtitle: 'One Big Green',
     productInfo: 'One Big Green is a SaaS platform for interior landscaping that manages the entire portfolio, contacts, budgets, time management and inventory.It is build on AWS using C#, VueJS and Flutter. It uses AWS services like; Lambda, S3, DynamoDB, Cognito, Amplify, SES, and more.',
     productLink: 'https://onebiggreen.com/',
-    tags: [...data.tags, "by One Big Green", "managing plants", "24/7 operational", "with dotnet C#", "with Flutter Android and iOS app", "with Vuejs", "on AWS Cloud"]
-  };
+    tags: [...data.tags, 'by One Big Green', 'managing plants', '24/7 operational', 'with dotnet C#', 'with Flutter Android and iOS app', 'with Vuejs', 'on AWS Cloud'],
+  }
 }
-export function siouxProject(data: Omit<Project, 'subtitle'>): Project {
+export function siouxProject (data: Omit<Project, 'subtitle'>): Project {
   return {
     ...data,
     subtitle: 'Sioux',
     productInfo: 'Sioux Technologies is a strategic high-tech solutions provider that develops, innovates and assembles complex high-tech systems.',
     productLink: 'https://www.sioux.com/',
-    tags: [...data.tags, "by Sioux", "with dotnet C#", "with WPF"]
-  };
+    tags: [...data.tags, 'by Sioux', 'with dotnet C#', 'with WPF'],
+  }
 }
