@@ -1,5 +1,5 @@
 <template>
-  <v-container class="fill-height fixed-top-margin" :max-width="$vuetify.display.smAndDown ? '100vw' : '1440px'" style="padding: 0;">
+  <v-container class="fill-height fixed-top-margin" :max-width="$vuetify.display.smAndDown ? '100vw' : '1440px'" style="padding: 20px;">
     <div class="mb-2">
       <div class="d-flex flex-column flex-md-row align-center justify-center mb-8 header-fixed-height">
         <v-avatar class="mr-0 mr-md-4 mb-2 mb-md-0" size="72px">
