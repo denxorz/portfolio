@@ -5,12 +5,29 @@ import {
   obgProject,
   privaProject,
   type Project,
+  rijkZwaanProject,
   siouxProject,
   siquraProject,
   supershiftProject,
 } from './types/project'
 
 export const projects: Project[] = [
+  rijkZwaanProject({
+    title: 'Rijk Zwaan',
+    image: 'rz.avif',
+    info: 'Internal development on the Integration Platform.',
+    url: 'https://rijkzwaan.com/',
+    tags: [
+
+    ],
+  }),
+  hobbyProject({
+    title: 'Statisfactory.net',
+    image: 'statisfactory.avif',
+    info: 'A dashboard for the game Satisfactory by Coffee Stain Studios. Shows the train, drone, and truck connections, power circuits, shards, sloops, factory status, used resources and more. The project runs fully in the browser of the user, so no backend is needed.',
+    url: 'https://statisfactory.net/',
+    tags: ['no green in logo', 'on Azure Cloud', 'with dotnet C#', 'with Blazor', 'with WASM'],
+  }),
   flexposureProject({
     title: 'ICC',
     image: 'icc.avif',
@@ -113,6 +130,15 @@ export const projects: Project[] = [
       'not in Netherlands',
     ],
   }),
+  privaProject({
+    title: 'Intergrow Greenhouses',
+    image: 'intergrow.avif',
+    info: 'Intergrow Greenhouses is a leading greenhouse grower in the United States, specializing in high-quality tomatoes and other produce. They focus on sustainable practices and innovative growing techniques.',
+    url: 'https://www.intergrowgreenhouses.com/',
+    tags: [
+      'not in Netherlands',
+    ],
+  }),
   obgProject({
     title: 'First Floral Company',
     image: 'firstfloral.avif',
@@ -129,15 +155,7 @@ export const projects: Project[] = [
     url: 'https://open.plantbook.io/',
     tags: ['managing plants', 'with dotnet C#', 'not in Netherlands'],
   }),
-  privaProject({
-    title: 'Intergrow Greenhouses',
-    image: 'intergrow.avif',
-    info: 'Intergrow Greenhouses is a leading greenhouse grower in the United States, specializing in high-quality tomatoes and other produce. They focus on sustainable practices and innovative growing techniques.',
-    url: 'https://www.intergrowgreenhouses.com/',
-    tags: [
-      'not in Netherlands',
-    ],
-  }),
+
   nurtioProject({
     title: 'Växtvård',
     image: 'vaxtvard.avif',
@@ -157,6 +175,15 @@ export const projects: Project[] = [
       'not in Netherlands',
     ],
   }),
+  privaProject({
+    title: 'Green Empire Farms',
+    image: 'greenempire.avif',
+    info: 'Mastronardi Green Empire Farms is a greenhouse grower in the United States, specializing in high-quality tomatoes and other produce. They focus on sustainable practices and innovative growing techniques.',
+    url: 'https://www.sunsetgrown.com/',
+    tags: [
+      'not in Netherlands',
+    ],
+  }),
   flexposureProject({
     title: 'Rabobank',
     image: 'rabobank.avif',
@@ -171,15 +198,6 @@ export const projects: Project[] = [
     image: 'leaflike.avif',
     info: 'Leaflike is a company that specializes in providing plant care solutions and services, including plant design, maintenance, and consultation for both residential and commercial spaces.',
     url: 'https://www.leaflike.co.uk/',
-    tags: [
-      'not in Netherlands',
-    ],
-  }),
-  privaProject({
-    title: 'Green Empire Farms',
-    image: 'greenempire.avif',
-    info: 'Mastronardi Green Empire Farms is a greenhouse grower in the United States, specializing in high-quality tomatoes and other produce. They focus on sustainable practices and innovative growing techniques.',
-    url: 'https://www.sunsetgrown.com/',
     tags: [
       'not in Netherlands',
     ],

@@ -50,6 +50,15 @@ export function siquraProject (data: Omit<Project, 'subtitle'>): Project {
     ],
   }
 }
+export function rijkZwaanProject (data: Omit<Project, 'subtitle'>): Project {
+  return {
+    ...data,
+    subtitle: 'Rijk Zwaan',
+    productInfo: 'Rijk Zwaan is a Dutch company that specializes in the production of seeds for fruits and vegetables. They are known for their innovative breeding programs and commitment to sustainable agriculture.',
+    productLink: 'https://rijkzwaan.com/',
+    tags: [...data.tags, 'by Rijk Zwaan', 'with dotnet C#', 'on Azure Cloud'],
+  }
+}
 export function supershiftProject (data: Omit<Project, 'subtitle'>): Project {
   return {
     ...data,
