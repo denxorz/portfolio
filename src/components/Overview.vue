@@ -54,6 +54,10 @@
               :variant="selectedTag === tag ? 'elevated' : 'outlined'"
               @click="toggleTag(tag)"
             >
+              <v-avatar v-if="tagImage(tag)" class="tag-logo" size="20" start>
+                <v-img contain :src="tagImage(tag)!" />
+              </v-avatar>
+              <v-icon v-else size="small" start>{{ tagIcon(tag) }}</v-icon>
               {{ tag }}
             </v-chip>
           </div>
@@ -94,6 +98,57 @@
     if (!isByA && isByB) return 1
     return a.localeCompare(b)
   })
+
+  const tagIcons: Record<string, string> = {
+    'involves cats': 'mdi-cat',
+    'involves cars': 'mdi-car',
+    'no green in logo': 'mdi-palette-outline',
+    'on Azure Cloud': 'mdi-microsoft-azure',
+    'on AWS Cloud': 'mdi-aws',
+    'on premises': 'mdi-lan',
+    'with dotnet C#': 'mdi-dot-net',
+    'with Blazor': 'mdi-fire',
+    'with WASM': 'mdi-web',
+    'with Vuejs': 'mdi-vuejs',
+    'not in Netherlands': 'mdi-map-marker',
+    'communicates with SignalR': 'mdi-signal',
+    'managing plants': 'mdi-flower',
+    '(partially) underground': 'mdi-tunnel-outline',
+    'has cameras': 'mdi-cctv',
+    'running in greenhouse': 'mdi-greenhouse',
+    'with WPF': 'mdi-list-box-outline',
+    'with WinForms': 'mdi-list-box-outline',
+    '24/7 operational': 'mdi-hours-24',
+  }
+  const defaultTagIcon = 'mdi-tag-outline'
+
+  const tagImages: Record<string, string> = {
+    'on Azure Cloud': '/assets/tag-logos/azure.png',
+    'on AWS Cloud': '/assets/tag-logos/aws.png',
+    'with dotnet C#': '/assets/tag-logos/signalr.png',
+    'with Blazor': 'https://cdn.simpleicons.org/blazor/512BD4',
+    'with WASM': 'https://cdn.simpleicons.org/webassembly/654FF0',
+    'with Vuejs': 'https://cdn.simpleicons.org/vuedotjs/4FC08D',
+    'with Flutter Android and iOS app': '/assets/tag-logos/flutter.png',
+    'communicates with SignalR': '/assets/tag-logos/signalr.png',
+    'communicates with WCF': '/assets/tag-logos/wcf.png',
+    'by TKH': '/assets/tag-logos/tkh.png',
+    'by Rijk Zwaan': '/assets/tag-logos/rijkzwaan.png',
+    'by Supershift': '/assets/tag-logos/supershift.png',
+    'by Nurtio': '/assets/tag-logos/nurtio.png',
+    'by Priva': '/assets/tag-logos/priva.png',
+    'by One Big Green': '/assets/tag-logos/onebiggreen.png',
+    'by Sioux': '/assets/tag-logos/sioux.png',
+  }
+
+  function tagIcon (tag: string): string {
+    if (tag.toLowerCase().startsWith('by ')) return 'mdi-account'
+    return tagIcons[tag] ?? defaultTagIcon
+  }
+
+  function tagImage (tag: string): string | null {
+    return tagImages[tag] ?? null
+  }
 
   const selectedTag = ref<string | null>(null)
 
@@ -181,7 +236,8 @@
 .fixed-top-margin {
   margin-top: 32px;
 }
-.header-fixed-height {
-  min-height: 160px;
+.tag-logo {
+  flex-shrink: 0;
+  background: white;
 }
 </style>
